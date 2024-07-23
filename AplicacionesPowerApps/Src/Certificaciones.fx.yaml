@@ -1,0 +1,226 @@
+Certificaciones As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+    OnVisible: =
+
+    ContainerCertificaciones As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =13
+
+        headerCertificaciones As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            tituloCertificaciones As label:
+                Align: =Align.Center
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="CERTIFICACIONES"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =1
+
+            iconUsuarioCertificaciones As icon.Lock:
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                LayoutMinHeight: =80
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =2
+
+            txtUsuarioCertificaciones As label:
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =Certificaciones.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =3
+
+        bodyCertificaciones As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =20
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container19 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =160
+                LayoutMinHeight: =150
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =200
+                ZIndex: =1
+
+                lblCertCMSA As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    Height: =30
+                    OnSelect: =Navigate(CertificacionesCMSA, ScreenTransition.Cover)
+                    Size: =10
+                    Text: |-
+                        ="HERRAMIENTAS - CMSA
+                        "
+                    Width: =200
+                    Y: =130
+                    ZIndex: =1
+
+                imgCertCMSA As image:
+                    Height: =120
+                    Image: =iconCertHtasCMSA
+                    OnSelect: =Navigate(CertificacionesCMSA, ScreenTransition.Cover)
+                    Width: =120
+                    X: =40
+                    Y: =10
+                    ZIndex: =2
+
+            Container21 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =160
+                LayoutMinHeight: =150
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =250
+                ZIndex: =3
+
+                lblCertContra As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    Height: =30
+                    OnSelect: =Navigate(CertificacionesContra, ScreenTransition.Cover)
+                    Size: =10
+                    Text: |-
+                        ="HERRAMIENTAS - CONTRATISTAS
+                        "
+                    Width: =250
+                    Y: =130
+                    ZIndex: =1
+
+                imgCertContra As image:
+                    Height: =120
+                    Image: =iconCertHtasContra
+                    OnSelect: =Navigate(CertificacionesContra, ScreenTransition.Cover)
+                    Width: =120
+                    X: =65
+                    Y: =10
+                    ZIndex: =2
+
+        footerCertificaciones As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_17 As rectangle:
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =671
+                ZIndex: =1
+
+            Container23 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                txtPiePaginaCert As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Height: =75
+                    Italic: =true
+                    PaddingTop: =10
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =531
+                    Y: =34
+                    ZIndex: =1
+
+                iconAtrasCert As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.Home
+                    OnSelect: =Navigate(Inicio, ScreenTransition.CoverRight)
+                    PaddingRight: =10
+                    Width: =55
+                    X: =1242
+                    Y: =580
+                    ZIndex: =2
+

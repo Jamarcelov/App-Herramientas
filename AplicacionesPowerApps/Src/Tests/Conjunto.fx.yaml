@@ -1,0 +1,32 @@
+"'192ab26a-4118-4c07-b5be-1d2b96160afb' As TestSuite":
+    Description: =""
+    DisplayName: ="Conjunto"
+
+    "'9c12936c-98c4-4899-bea2-7ce8cf7c278f' As TestCase":
+        Description: ="Iniciar sesión"
+        DisplayName: ="Escenario"
+
+        Step1 As TestStep:
+            Description: ="Digitar credenciales y dar click en Iniciar sesión"
+            Value: |-
+                =If(
+                    txtUsuario.Text = LookUp(
+                        Usuario_htria_ppal,
+                        user_usuario = txtUsuario.Text,
+                        user_usuario
+                    ) && txtClave.Text = LookUp(
+                        Usuario_htria_ppal,
+                        clave_usuario = txtClave.Text,
+                        clave_usuario
+                    ),
+                    Navigate(
+                        Inicio,
+                        ScreenTransition.Cover
+                    ),
+                    Notify(
+                        "¡Credenciales incorrectas. Por favor, verifique su usuario o su contraseña",
+                        NotificationType.Error,
+                        2500
+                    )
+                )
+

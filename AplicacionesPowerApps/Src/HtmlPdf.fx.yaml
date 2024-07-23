@@ -1,0 +1,52 @@
+"HtmlPdf As screen.'printableLayout_A4Portrait_ver2.0'":
+    Height: =1123
+    Width: =794
+
+    PrintButton1 As Botón:
+        Appearance: ='ButtonCanvas.Appearance'.Secondary
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnSelect: =Print()
+        Text: ="Imprimir"
+        Visible: =Not(HtmlPdf.Printing)
+        Width: =96
+        X: =349
+        Y: =1058
+        ZIndex: =1
+
+    HtmlText1_2 As htmlViewer:
+        Font: =Font.Lato
+        Height: =1058
+        HtmlText: |-
+            ="
+            <div style='overflow-y: auto;'>
+            <h2 style='text-align: center;'>LISTADO DE HERRAMIENTAS PRESTADAS</h2>
+            <p><strong>Fecha:</strong> <i>" & Text(
+                Today(),
+                "dd mmmm yyyy"
+            ) & "</i></p>
+            <p><strong>Cliente:</strong> <i>" & LookUp(
+                Cliente_cmsa_htria_ppal,
+                cedula_cliente = Value(txtCedulaCliente.Text),
+                nombre_cliente
+            ) & "</i></p>
+            <hr style='height: 5px; background-color: yellow;'>
+            " & Concat(
+                galPrestamosHtaCMSA.AllItems,
+                "<ul>
+            <li><strong>Fecha de préstamo:</strong> " & fecha_prestamo_hta & "<br>
+            <strong>Herramienta:</strong> " & descripcion_hta & " - " & capacidad_hta & "<br>
+            <strong>Cantidad:</strong> " & Round(
+                    Value(
+                        contador_cantidad_hta,
+                        "en-US"
+                    ),
+                    0
+                ) & "<br>
+            </li>
+            </ul></div>") 
+        Size: =12
+        Width: =Parent.Width
+        ZIndex: =2
+

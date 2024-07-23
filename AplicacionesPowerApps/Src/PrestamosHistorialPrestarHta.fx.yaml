@@ -1,0 +1,1526 @@
+PrestamosHistorialPrestarHta As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+    OnVisible: =
+
+    Container12_5 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =13
+
+        header_18 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            iconUbicacionHtasCertCMSA_4 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =30
+                Icon: =Icon.Waypoint
+                PaddingLeft: =10
+                Visible: =PrestamosHistorialPrestarHta.Size <> 1
+                Width: =30
+                X: =83
+                Y: =1
+                ZIndex: =1
+
+            txUbicacionHtasCertCMSA_8 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =9
+                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Visible: =PrestamosHistorialPrestarHta.Size <> 1
+                Width: =160
+                X: =30
+                Y: =69
+                ZIndex: =2
+
+            tituloPrestamosCrearEditarHta_2 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="PRÉSTAMOS"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =3
+
+            iconUsuarioPrestamosCrearEditarHta_2 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                LayoutMinHeight: =80
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =4
+
+            txtUsuarioPrestamosCrearEditarHta_2 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =PrestamosHistorialPrestarHta.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =5
+
+        body_18 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container29_6 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =100
+                LayoutGap: =5
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                PaddingTop: =10
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                iconBuscarPrestamosHistorialPrestarHta As icon.Search:
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =40
+                    Icon: =Icon.Search
+                    Width: =40
+                    ZIndex: =1
+
+                txtBuscarHtaPrestar As text:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Default: =""
+                    Font: =Font.Lato
+                    HintText: ="Buscar por Descripción, Código o No. Precinto"
+                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =RGBA(166, 166, 166, 1)
+                    Italic: =true
+                    Size: =10
+                    Width: =270
+                    ZIndex: =2
+
+                lblDatosCliente_1 As htmlViewer:
+                    Font: =Font.Lato
+                    HtmlText: |-
+                        ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente) & "</i>"
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Width: =320
+                    ZIndex: =3
+
+            "galPrestamosPrestarHtaCMSA As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =388
+                Items: |-
+                    =If(
+                        IsBlank(txtBuscarHtaPrestar.Text),
+                        Filter(Hta_Cmsa, ubicacion_hta.Value = varUbicacion),
+                        Filter(
+                            Hta_Cmsa,
+                            ((StartsWith(
+                                descripcion_hta,
+                                txtBuscarHtaPrestar.Text
+                            ) Or StartsWith(
+                                codigo_hta,
+                                txtBuscarHtaPrestar.Text
+                            ) Or (no_precinto_hta = txtBuscarHtaPrestar.Text))) && ubicacion_hta.Value = varUbicacion
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =15
+                TemplateSize: =190
+                Width: =1361
+                WrapCount: =CertificacionesCMSA.Size
+                X: =5
+                Y: =3
+                ZIndex: =3
+
+                Rectangle6_6 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Width: =1
+                    X: =3
+                    Y: =45
+                    ZIndex: =1
+
+                Rectangle5_6 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =307
+                    X: =8
+                    Y: =180
+                    ZIndex: =2
+
+                cantidadHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =Round(Value(ThisItem.contador_cantidad_hta, "en-US"), 0) 
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHistorialPrestarHta.Width
+                    X: =145
+                    Y: =159
+                    ZIndex: =5
+
+                tituloCantidadHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Cantidad disponible:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =130
+                    X: =15
+                    Y: =159
+                    ZIndex: =6
+
+                UbicacionHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.ubicacion_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =191
+                    X: =97
+                    Y: =116
+                    ZIndex: =7
+
+                tituloUbicacionHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Ubicación:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =82
+                    X: =15
+                    Y: =115
+                    ZIndex: =8
+
+                precintoHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.no_precinto_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHistorialPrestarHta.Width
+                    X: =97
+                    Y: =96
+                    ZIndex: =9
+
+                tituloPrecintoHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Precinto:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =82
+                    X: =15
+                    Y: =95
+                    ZIndex: =10
+
+                codigoHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.codigo_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHistorialPrestarHta.Width
+                    X: =97
+                    Y: =75
+                    ZIndex: =11
+
+                tituloCodigoHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Código:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =82
+                    X: =15
+                    Y: =75
+                    ZIndex: =12
+
+                capacidadHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.capacidad_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHistorialPrestarHta.Width
+                    X: =97
+                    Y: =55
+                    ZIndex: =13
+
+                tituloCapacidadHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Capacidad:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =82
+                    X: =15
+                    Y: =55
+                    ZIndex: =14
+
+                descripcionHtaHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =32
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.descripcion_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =210
+                    X: =97
+                    Y: =22
+                    ZIndex: =15
+
+                tituloDescripcionHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =19
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Descripción:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =82
+                    X: =15
+                    Y: =22
+                    ZIndex: =16
+
+                tipoHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.tipo_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =143
+                    X: =145
+                    Y: =2
+                    ZIndex: =17
+
+                tituloTipoHistorialPrestarHta As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Tipo de herramienta:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =130
+                    X: =15
+                    Y: =2
+                    ZIndex: =18
+
+                iconPrestarHistorialPrestarHta As icon.OpenInNewWindow:
+                    Color: =RGBA(184, 0, 0, 1)
+                    DisplayMode: =If(IsEmpty(Filter(listadoHtasPrestar, codigo_hta = ThisItem.codigo_hta)), DisplayMode.Edit, DisplayMode.Disabled)
+                    Height: =45
+                    Icon: =Icon.Download
+                    OnSelect: |-
+                        =If(
+                            ThisItem.codigo_compartido_hta.Value = "NO",
+                            Set(
+                                avisoPrestarHtaCodigoUnico,
+                                true
+                            ),
+                            Set(
+                                avisoPrestarHtaCodigoCompartido,
+                                true
+                            )
+                        )
+                    Rotation: =180
+                    Visible: =If(ThisItem.disponibilidad_hta = "NO DISPONIBLE" || ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", false, true)
+                    Width: =45
+                    X: =275
+                    Y: =73
+                    ZIndex: =19
+
+                IconBloqueadaHistorialPrestarHta As icon.Lock:
+                    Color: =RGBA(128, 128, 128, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =30
+                    Icon: =Icon.Lock
+                    Visible: =If(ThisItem.contador_cantidad_hta = "0" || ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                    Width: =30
+                    X: =277
+                    Y: =54
+                    ZIndex: =20
+
+                msjloqueadaHistorialPrestarHta As label:
+                    Align: =Align.Center
+                    Color: =RGBA(128, 128, 128, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =24
+                    Italic: =true
+                    Size: =7
+                    Text: ="Bloqueada"
+                    Visible: =If(ThisItem.contador_cantidad_hta = "0" || ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                    Width: =60
+                    X: =262
+                    Y: =82
+                    ZIndex: =21
+
+            Container30_6 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =90
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingTop: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =4
+
+                Container32_6 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =90
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =130
+                    ZIndex: =1
+
+                    Circle1 As circle:
+                        Fill: =RGBA(184, 0, 0, 1)
+                        Height: =23
+                        Visible: =If(IsEmpty(listadoHtasPrestar), false, true)
+                        Width: =23
+                        X: =90
+                        Y: =1
+                        ZIndex: =1
+
+                    Label4 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(255, 255, 255, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =20
+                        Size: =8
+                        Text: =If(IsEmpty(listadoHtasPrestar), 0, Sum(listadoHtasPrestar, cantidad_hta))
+                        Visible: =If(IsEmpty(listadoHtasPrestar), false, true)
+                        Width: =25
+                        X: =88
+                        Y: =2
+                        ZIndex: =2
+
+                    lblCrearHtaCertCMSA_2 As label:
+                        Align: =Align.Center
+                        Font: =Font.Lato
+                        Height: =20
+                        Italic: =true
+                        Size: =10
+                        Text: ="Listado de préstamos"
+                        Width: =130
+                        Y: =60
+                        ZIndex: =3
+
+                    iconCrearHtaCertCMSA_2 As icon.OpenInNewWindow:
+                        Color: =RGBA(0, 0, 0, 1)
+                        Height: =50
+                        Icon: =Icon.ShoppingCart
+                        OnSelect: =Navigate(ListadoPrestamos, ScreenTransition.Cover)
+                        Width: =50
+                        X: =40
+                        Y: =10
+                        ZIndex: =4
+
+                Container35_3 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    LayoutMinHeight: =90
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =100
+                    ZIndex: =2
+
+                    Group16_3 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-181
+                        Y: =20
+                        ZIndex: =3
+
+                        lblActualizarCertCMSA_2 As label:
+                            Align: =Align.Center
+                            Font: =Font.Lato
+                            Height: =20
+                            Italic: =true
+                            Size: =10
+                            Text: ="Actualizar"
+                            Width: =100
+                            Y: =60
+                            ZIndex: =1
+
+                        iconActualizarCertCMSA_2 As icon.OpenInNewWindow:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =50
+                            Icon: =Icon.Reload
+                            OnSelect: =Refresh(Hta_Cmsa)
+                            Width: =50
+                            X: =25
+                            Y: =10
+                            ZIndex: =2
+
+        footer_18 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_31 As rectangle:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =671
+                ZIndex: =1
+
+            Container23_5 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                txtPiePaginaPrestamosCrearEditarHta_2 As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Height: =75
+                    Italic: =true
+                    PaddingTop: =10
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =531
+                    Y: =34
+                    ZIndex: =1
+
+                iconAtrasPrestamosCrearEditarHta_2 As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.BackArrow
+                    OnSelect: =Navigate(PrestamosHistorialCedulaCliente, ScreenTransition.CoverRight); Reset(txtBuscarHtaPrestar)
+                    PaddingRight: =10
+                    Width: =55
+                    X: =1242
+                    Y: =580
+                    ZIndex: =2
+
+    Container14_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =avisoPrestarHtaCodigoUnico
+        Width: =Parent.Width
+        ZIndex: =14
+
+        Container15_1 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =420
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =450
+            ZIndex: =1
+
+            Container22_1 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoPrestarHtaCodigoUnico
+                Width: =Parent.Width
+                ZIndex: =1
+
+                iconAdvertenciaAvisoPrestarHtaCodUnico As icon.Warning:
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =40
+                    Icon: =Icon.Warning
+                    Visible: =avisoPrestarHtaCodigoUnico
+                    Width: =40
+                    X: =158
+                    Y: =66
+                    ZIndex: =1
+
+                tituloAvisoPrestarHtaCodUnico As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Size: =10
+                    Text: ="AGREGAR A LISTADO DE PRESTAMOS"
+                    Visible: =avisoPrestarHtaCodigoUnico
+                    Width: =250
+                    X: =356
+                    Y: =14
+                    ZIndex: =2
+
+            lineaAvisoPrestarHtaCodUnico As rectangle:
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Visible: =avisoPrestarHtaCodigoUnico
+                Width: =Parent.Width - 50
+                X: =233
+                Y: =133
+                ZIndex: =2
+
+            lblPreguntaAvisoPrestarHtaCodUnico As label:
+                Align: =Align.Center
+                Color: =RGBA(184, 0, 0, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Italic: =true
+                Size: =10
+                Text: ="¿Está seguro(a) de agregar esta herramienta al listado de préstamos?"
+                Visible: =avisoPrestarHtaCodigoUnico
+                Width: =369
+                X: =266
+                Y: =44
+                ZIndex: =3
+
+            "galAvisoPrestarHtaCodUnico As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                AlignInContainer: =AlignInContainer.Center
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =240
+                Items: =galPrestamosPrestarHtaCMSA.Selected
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =212
+                Visible: =avisoPrestarHtaCodigoUnico
+                Width: =Parent.Width
+                X: =505
+                Y: =247
+                ZIndex: =4
+
+                Group13_1 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =15
+
+                    estadoHtaAvisoEliminar_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.cantidad_hta
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =173
+                        ZIndex: =1
+
+                    precintoHtaAvisoEliminar_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.no_precinto_hta
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =143
+                        ZIndex: =2
+
+                    capacidadHtaAvisoEliminar_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.capacidad_hta
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =114
+                        ZIndex: =4
+
+                    descripcionHtaAvisoEliminar_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.descripcion_hta
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =83
+                        ZIndex: =5
+
+                    codigoHtaAvisoEliminar_1 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.codigo_hta
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =52
+                        ZIndex: =6
+
+                    tipoHtaAvisoEliminar_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =23
+                        LineHeight: =1.5
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.tipo_hta.Value
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =170
+                        X: =267
+                        Y: =22
+                        ZIndex: =7
+
+                    lblCantidadHtaPrestarCodUnico As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="CANTIDAD:"
+                        Width: =170
+                        X: =95
+                        Y: =173
+                        ZIndex: =8
+
+                    lblPrecinto_3 As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="NO. PRECINTO:"
+                        Width: =170
+                        X: =95
+                        Y: =143
+                        ZIndex: =9
+
+                    lblCapacidad_3 As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="CAPACIDAD:"
+                        Width: =170
+                        X: =95
+                        Y: =114
+                        ZIndex: =11
+
+                    lblDescripcion_3 As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="DESCRIPCIÓN:"
+                        Width: =170
+                        X: =95
+                        Y: =83
+                        ZIndex: =12
+
+                    lblCodigo_1 As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="CÓDIGO:"
+                        Width: =170
+                        X: =95
+                        Y: =52
+                        ZIndex: =13
+
+                    lblTipo_3 As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =23
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="TIPO DE HERRAMIENTA:"
+                        Width: =170
+                        X: =95
+                        Y: =22
+                        ZIndex: =14
+
+            Container20_1 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =55
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =30
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoPrestarHtaCodigoUnico
+                Width: =350
+                ZIndex: =5
+
+                btnAvisoPrestarHtaCodUnicoSi As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: |-
+                        =Collect(
+                            listadoHtasPrestar,
+                            {
+                                tipo_hta: galPrestamosPrestarHtaCMSA.Selected.tipo_hta,
+                                codigo_hta: galPrestamosPrestarHtaCMSA.Selected.codigo_hta,
+                                descripcion_hta: galPrestamosPrestarHtaCMSA.Selected.descripcion_hta,
+                                capacidad_hta: If(IsBlank(galPrestamosPrestarHtaCMSA.Selected.capacidad_hta),"",galPrestamosPrestarHtaCMSA.Selected.capacidad_hta),
+                                marca_hta: If(IsBlank(galPrestamosPrestarHtaCMSA.Selected.marca_hta),"",galPrestamosPrestarHtaCMSA.Selected.marca_hta),
+                                codigo_compartido_hta: galPrestamosPrestarHtaCMSA.Selected.codigo_compartido_hta.Value,
+                                cantidad_hta: If(
+                                    galPrestamosPrestarHtaCMSA.Selected.codigo_compartido_hta.Value = "NO",
+                                    galPrestamosPrestarHtaCMSA.Selected.cantidad_hta
+                                ),
+                                estado_prestamo_hta: "Prestada",
+                                ubicacion_prestamo_hta: varUbicacion,
+                                ubicacion_hta: galPrestamosPrestarHtaCMSA.Selected.ubicacion_hta,
+                                turno_prestamo_hta: varTurno,
+                                cedula_cliente: LookUp(
+                                    Cliente_cmsa_htria_ppal,
+                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    cedula_cliente
+                                ),
+                                nombre_cliente: LookUp(
+                                    Cliente_cmsa_htria_ppal,
+                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    nombre_cliente
+                                ),
+                                nombre_usuario: LookUp(
+                                    Usuario_htria_ppal,
+                                    user_usuario = txtUsuario.Text,
+                                    nombre_usuario
+                                )
+                            }
+                        );
+                        Set(
+                            avisoPrestarHtaCodigoUnico,
+                            false
+                        );
+                        Notify(
+                            "¡Herramienta agregada con éxito!",
+                            NotificationType.Success,
+                            1500
+                        )
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="SI"
+                    Visible: =avisoPrestarHtaCodigoUnico
+                    Width: =130
+                    X: =289
+                    Y: =507
+                    ZIndex: =1
+
+                btnAvisoPrestarHtaCodUnicoNo As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: =Set(avisoPrestarHtaCodigoUnico, false)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="NO"
+                    Visible: =avisoPrestarHtaCodigoUnico
+                    Width: =130
+                    X: =225
+                    Y: =507
+                    ZIndex: =2
+
+    Container14_2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =avisoPrestarHtaCodigoCompartido
+        Width: =Parent.Width
+        ZIndex: =15
+
+        Container15_2 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =420
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Visible: =avisoPrestarHtaCodigoCompartido
+            Width: =450
+            ZIndex: =1
+
+            Container22_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoPrestarHtaCodigoCompartido
+                Width: =Parent.Width
+                ZIndex: =1
+
+                iconAdvertenciaAvisoPrestarHtaCodigoCompartido As icon.Warning:
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =40
+                    Icon: =Icon.Warning
+                    Visible: =avisoPrestarHtaCodigoCompartido
+                    Width: =40
+                    X: =158
+                    Y: =66
+                    ZIndex: =1
+
+                tituloAvisoPrestarHtaCodigoCompartido As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Size: =10
+                    Text: ="AGREGAR A LISTADO DE PRESTAMOS"
+                    Visible: =avisoPrestarHtaCodigoCompartido
+                    Width: =250
+                    X: =356
+                    Y: =14
+                    ZIndex: =2
+
+            lineaAvisoPrestarHtaCodigoCompartido As rectangle:
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Visible: =avisoPrestarHtaCodigoCompartido
+                Width: =Parent.Width - 50
+                X: =233
+                Y: =133
+                ZIndex: =2
+
+            lblPreguntaAvisoPrestarHtaCodigoCompartido As label:
+                Align: =Align.Center
+                Color: =RGBA(184, 0, 0, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Italic: =true
+                Size: =10
+                Text: ="¿Está seguro(a) de agregar esta herramienta al listado de préstamos?"
+                Visible: =avisoPrestarHtaCodigoCompartido
+                Width: =369
+                X: =266
+                Y: =44
+                ZIndex: =3
+
+            "galAvisoPrestarHtaCodigoCompartido As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                AlignInContainer: =AlignInContainer.Center
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =240
+                Items: =galPrestamosPrestarHtaCMSA.Selected
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =212
+                Visible: =avisoPrestarHtaCodigoCompartido
+                Width: =Parent.Width
+                X: =505
+                Y: =247
+                ZIndex: =4
+
+                txtCantidadAvisoPrestarCodCompartido As text:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Default: =""
+                    Font: =Font.Lato
+                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =RGBA(166, 166, 166, 1)
+                    Size: =12
+                    Width: =64
+                    X: =265
+                    Y: =169
+                    ZIndex: =1
+
+                precintoHtaAvisoEliminar_4 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =24
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.no_precinto_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    X: =267
+                    Y: =145
+                    ZIndex: =2
+
+                capacidadHtaAvisoEliminar_4 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =24
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.capacidad_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    X: =267
+                    Y: =114
+                    ZIndex: =3
+
+                descripcionHtaAvisoEliminar_4 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =24
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.descripcion_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    X: =267
+                    Y: =82
+                    ZIndex: =4
+
+                codigoHtaAvisoEliminar_2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =24
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.codigo_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    X: =267
+                    Y: =49
+                    ZIndex: =5
+
+                tipoHtaAvisoEliminar_4 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =24
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.tipo_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =170
+                    X: =267
+                    Y: =17
+                    ZIndex: =6
+
+                lblCantidadHtaPrestarCodUnico_1 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="CANTIDAD:"
+                    Width: =170
+                    X: =95
+                    Y: =182
+                    ZIndex: =7
+
+                lblPrecinto_4 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="NO. PRECINTO:"
+                    Width: =170
+                    X: =95
+                    Y: =145
+                    ZIndex: =8
+
+                lblCapacidad_4 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="CAPACIDAD:"
+                    Width: =170
+                    X: =95
+                    Y: =114
+                    ZIndex: =9
+
+                lblDescripcion_4 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="DESCRIPCIÓN:"
+                    Width: =170
+                    X: =95
+                    Y: =82
+                    ZIndex: =10
+
+                lblCodigo_2 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="CÓDIGO:"
+                    Width: =170
+                    X: =95
+                    Y: =49
+                    ZIndex: =11
+
+                lblTipo_4 As label:
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: |-
+                        ="TIPO DE HERRAMIENTA:"
+                    Width: =170
+                    X: =95
+                    Y: =17
+                    ZIndex: =12
+
+            Container20_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =55
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =30
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoPrestarHtaCodigoCompartido
+                Width: =350
+                ZIndex: =5
+
+                btnAvisoPrestarHtaCodigoCompartidoSi As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: |-
+                        =If(
+                            Value(txtCantidadAvisoPrestarCodCompartido.Text) > Round(Value(galAvisoPrestarHtaCodigoCompartido.Selected.contador_cantidad_hta, "en-US"),0) || Value(txtCantidadAvisoPrestarCodCompartido.Text) = 0 || IsBlank(txtCantidadAvisoPrestarCodCompartido.Text),
+                            Notify(
+                                "¡La cantidad ingresada supera la cantidad de htas disponibles o la cantidad ingresada es igual a 0 o le falta llenar el campo cantidad!",
+                                NotificationType.Error,
+                                3000
+                            ),
+                            Collect(
+                                listadoHtasPrestar,
+                                {
+                                    tipo_hta: galPrestamosPrestarHtaCMSA.Selected.tipo_hta,
+                                    codigo_hta: galPrestamosPrestarHtaCMSA.Selected.codigo_hta,
+                                    descripcion_hta: galPrestamosPrestarHtaCMSA.Selected.descripcion_hta,
+                                    capacidad_hta: If(IsBlank(galPrestamosPrestarHtaCMSA.Selected.capacidad_hta),"",galPrestamosPrestarHtaCMSA.Selected.capacidad_hta),
+                                    marca_hta: If(IsBlank(galPrestamosPrestarHtaCMSA.Selected.marca_hta),"",galPrestamosPrestarHtaCMSA.Selected.marca_hta),
+                                    codigo_compartido_hta: galPrestamosPrestarHtaCMSA.Selected.codigo_compartido_hta.Value,
+                                    cantidad_hta: If(
+                                        galPrestamosPrestarHtaCMSA.Selected.codigo_compartido_hta.Value = "NO",
+                                        galPrestamosPrestarHtaCMSA.Selected.cantidad_hta,
+                                        Value(txtCantidadAvisoPrestarCodCompartido.Text)
+                                    ),
+                                    estado_prestamo_hta: "Prestada",
+                                    ubicacion_prestamo_hta: varUbicacion,
+                                    ubicacion_hta: galPrestamosPrestarHtaCMSA.Selected.ubicacion_hta,
+                                    turno_prestamo_hta: varTurno,
+                                    cedula_cliente: LookUp(
+                                        Cliente_cmsa_htria_ppal,
+                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        cedula_cliente
+                                    ),
+                                    nombre_cliente: LookUp(
+                                        Cliente_cmsa_htria_ppal,
+                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        nombre_cliente
+                                    ),
+                                    nombre_usuario: LookUp(
+                                        Usuario_htria_ppal,
+                                        user_usuario = txtUsuario.Text,
+                                        nombre_usuario
+                                    )
+                                }
+                            );
+                            Set(
+                                avisoPrestarHtaCodigoCompartido,
+                                false
+                            );
+                            Notify(
+                                "¡Herramienta agregada con éxito!",
+                                NotificationType.Success,
+                                1500
+                            )
+                        )
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="SI"
+                    Visible: =avisoPrestarHtaCodigoCompartido
+                    Width: =130
+                    X: =289
+                    Y: =507
+                    ZIndex: =1
+
+                btnAvisoPrestarHtaCodigoCompartidoNo As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: |
+                        =Set(avisoPrestarHtaCodigoCompartido, false)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="NO"
+                    Visible: =avisoPrestarHtaCodigoCompartido
+                    Width: =130
+                    X: =225
+                    Y: =507
+                    ZIndex: =2
+

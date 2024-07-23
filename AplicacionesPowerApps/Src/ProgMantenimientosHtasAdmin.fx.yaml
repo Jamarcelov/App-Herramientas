@@ -1,0 +1,1550 @@
+ProgMantenimientosHtasAdmin As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+    OnVisible: =
+
+    ContainerProgMantenimientosHtasAdmin As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =8
+
+        headerProgMantenimientosHtasAdmin As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            iconUbicacionProgMttoHtasAdmin As icon.Lock:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =30
+                Icon: =Icon.Waypoint
+                PaddingLeft: =10
+                Visible: =ProgMantenimientosHtasAdmin.Size <> 1
+                Width: =30
+                X: =113
+                Y: =1
+                ZIndex: =1
+
+            txUbicacionProgMttoHtasAdmin As label:
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =8
+                Text: |-
+                    ="Herramientas - CMSA
+                    "
+                Visible: =ProgMantenimientosHtasAdmin.Size <> 1
+                Width: =160
+                X: =30
+                Y: =70
+                ZIndex: =2
+
+            tituloProgMttoHtasAdmin As label:
+                Align: =Align.Center
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                Text: ="PROGRAMACIÓN DE MANTENIMIENTOS"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =3
+
+            iconUsuarioProgMttoHtasAdmin As icon.Lock:
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =4
+
+            txtUsuarioProgMttoHtasAdmin As label:
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =ProgMantenimientosHtasAdmin.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =5
+
+        bodyProgMantenimientosHtasAdmin As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container29_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                PaddingTop: =15
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                IconBuscarHtaCertCMSA_1 As icon.ZoomIn:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =40
+                    Icon: =Icon.Search
+                    PaddingRight: =5
+                    Width: =40
+                    X: =441
+                    Y: =133
+                    ZIndex: =1
+
+                txtBuscarHtaCertCMSA_1 As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Default: =""
+                    Font: =Font.Lato
+                    HintText: ="Buscar por descripción, código o número de precinto"
+                    HoverBorderColor: =RGBA(102, 102, 102, 1)
+                    HoverFill: =RGBA(237, 237, 237, 1)
+                    Italic: =true
+                    Size: =10
+                    Width: =300
+                    X: =49
+                    Y: =133
+                    ZIndex: =2
+
+            Label2 As label:
+                Align: =Align.Center
+                Color: =RGBA(3, 171, 17, 1)
+                FillPortions: =1
+                Font: =Font.'Lato Black'
+                Height: =88
+                Italic: =true
+                Size: =12
+                Text: ="¡Por el momento no se encuentran herramientas disponibles para programar mantenimientos!"
+                Visible: =If(IsEmpty(galProgMantenimientosHtasAdmin.AllItems), true)
+                Width: =294
+                X: =536
+                Y: =340
+                ZIndex: =2
+
+            "galProgMantenimientosHtasAdmin As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =388
+                Items: |-
+                    =SortByColumns(
+                        If(
+                            IsBlank(txtBuscarHtaCertCMSA_1.Text),
+                            Filter(
+                                Hta_Cmsa,
+                                estado_hta.Value = "Mtto" || estado_hta.Value = "Mtto Preventivo" || estado_hta.Value = "Mtto Correctivo"
+                            ),
+                            Filter(
+                                Hta_Cmsa,
+                                (StartsWith(
+                                    descripcion_hta,
+                                    txtBuscarHtaCertCMSA_1.Text
+                                ) && (estado_hta.Value = "Mtto" || estado_hta.Value = "Mtto Preventivo" || estado_hta.Value = "Mtto Correctivo")) Or (StartsWith(
+                                    codigo_hta,
+                                    txtBuscarHtaCertCMSA_1.Text
+                                ) && (estado_hta.Value = "Mtto" || estado_hta.Value = "Mtto Preventivo" || estado_hta.Value = "Mtto Correctivo")) Or (no_precinto_hta = txtBuscarHtaCertCMSA_1.Text)
+                            )
+                        ),
+                        "fecha_inspeccion_hta",
+                        SortOrder.Descending
+                    )
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =15
+                TemplateSize: =250
+                Width: =1361
+                WrapCount: =ProgMantenimientosHtasAdmin.Size
+                X: =5
+                Y: =3
+                ZIndex: =3
+
+                Rectangle6_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    Height: =170
+                    OnSelect: =Select(Parent)
+                    Width: =1
+                    X: =8
+                    Y: =35
+                    ZIndex: =1
+
+                Rectangle5_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =307
+                    X: =8
+                    Y: =242
+                    ZIndex: =2
+
+                obvHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =47
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.observaciones_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =192
+                    X: =118
+                    Y: =190
+                    ZIndex: =3
+
+                tituloObvHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =26
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Observaciones:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =103
+                    X: =15
+                    Y: =190
+                    ZIndex: =4
+
+                estadoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =If(ThisItem.estado_hta.Value = "MTTO", RGBA(192,0,0,1), RGBA(0, 0, 0, 1))
+                    Font: =Font.Lato
+                    Height: =20
+                    Italic: =true
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.estado_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHtaCertCMSA_1.Width
+                    X: =69
+                    Y: =170
+                    ZIndex: =5
+
+                tituloEstadoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Estado:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =57
+                    X: =15
+                    Y: =170
+                    ZIndex: =6
+
+                ubicacionHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.ubicacion_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =220
+                    X: =90
+                    Y: =150
+                    ZIndex: =7
+
+                tituloUbicacionHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Ubicación:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =81
+                    X: =15
+                    Y: =150
+                    ZIndex: =8
+
+                noPrecintoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.no_precinto_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHtaCertCMSA_1.Width
+                    X: =100
+                    Y: =130
+                    ZIndex: =9
+
+                tituloNoPrecintoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="No. Precinto:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =85
+                    X: =15
+                    Y: =130
+                    ZIndex: =10
+
+                fechaInspHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =Text(ThisItem.fecha_inspeccion_hta, "dd/mm/yyyy")
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =115
+                    X: =145
+                    Y: =110
+                    ZIndex: =11
+
+                tituloFechaInspHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Fecha de inspección:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =130
+                    X: =15
+                    Y: =110
+                    ZIndex: =12
+
+                cantidadHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.cantidad_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHtaCertCMSA_1.Width
+                    X: =83
+                    Y: =90
+                    ZIndex: =13
+
+                tituloCantidadHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Cantidad:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =68
+                    X: =15
+                    Y: =90
+                    ZIndex: =14
+
+                codigoHta_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.codigo_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHtaCertCMSA_1.Width
+                    X: =72
+                    Y: =70
+                    ZIndex: =15
+
+                tituloCodigoHta_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Código:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =57
+                    X: =15
+                    Y: =70
+                    ZIndex: =16
+
+                capacidadHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.capacidad_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =tipoHtaCertCMSA_1.Width
+                    X: =96
+                    Y: =50
+                    ZIndex: =17
+
+                tituloCapacidadHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Capacidad:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =85
+                    X: =15
+                    Y: =50
+                    ZIndex: =18
+
+                descripcionHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.descripcion_hta
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =210
+                    X: =100
+                    Y: =30
+                    ZIndex: =19
+
+                tituloDescripcionHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Descripción:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =85
+                    X: =15
+                    Y: =30
+                    ZIndex: =20
+
+                tipoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    LineHeight: =1.5
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.tipo_hta.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =130
+                    X: =145
+                    Y: =10
+                    ZIndex: =21
+
+                tituloTipoHtaCertCMSA_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Tipo de herramienta:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =130
+                    X: =15
+                    Y: =10
+                    ZIndex: =22
+
+                iconEditarHtaCertCMSA_2 As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =50
+                    Icon: =Icon.Clock
+                    OnSelect: =NewForm(formProgMttoHtasAdmin); Set(avisoProgramarMttoHta, true)
+                    Width: =50
+                    X: =260
+                    Y: =95
+                    ZIndex: =23
+
+            Container30_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =90
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingTop: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =4
+
+                Container32_2 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =90
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =150
+                    ZIndex: =1
+
+                    lblVerProgMttoHtasAdmin_1 As label:
+                        Align: =Align.Center
+                        Font: =Font.Lato
+                        Height: =20
+                        Italic: =true
+                        OnSelect: =
+                        Size: =10
+                        Text: ="Seguimiento de mttos"
+                        Width: =Parent.Width
+                        Y: =60
+                        ZIndex: =7
+
+                    iconVerProgMttoHtasAdmin_1 As icon.OpenInNewWindow:
+                        Color: =RGBA(0, 0, 0, 1)
+                        Height: =50
+                        Icon: =Icon.ListScrollWatchlist
+                        OnSelect: =Navigate(ProgMantenimientosHtasAdminSeg, ScreenTransition.Cover)
+                        Width: =50
+                        X: =50
+                        Y: =10
+                        ZIndex: =8
+
+                Container48 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =90
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =100
+                    ZIndex: =2
+
+                    lblVerProgMttoHtasAdmin As label:
+                        Align: =Align.Center
+                        Font: =Font.Lato
+                        Height: =20
+                        Italic: =true
+                        OnSelect: =
+                        Size: =10
+                        Text: ="Actualizar"
+                        Width: =Parent.Width
+                        Y: =61
+                        ZIndex: =1
+
+                    iconVerProgMttoHtasAdmin As icon.OpenInNewWindow:
+                        Color: =RGBA(0, 0, 0, 1)
+                        Height: =50
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh(Hta_Cmsa)
+                        Width: =50
+                        X: =25
+                        Y: =11
+                        ZIndex: =2
+
+        footerProgMantenimientosHtasAdmin As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_22 As rectangle:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =696
+                ZIndex: =1
+
+            Container28_3 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                txtPiePaginaProgMttoHtasAdmin As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Italic: =true
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =564
+                    Y: =715
+                    ZIndex: =1
+
+                iconAtrasCertProgMttoHtasAdmin As icon.OpenInNewWindow:
+                    AlignInContainer: =AlignInContainer.Center
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.BackArrow
+                    OnSelect: =Navigate(MantenimientosAdmin, ScreenTransition.CoverRight)
+                    PaddingRight: =10
+                    Width: =55
+                    X: =25
+                    Y: =10
+                    ZIndex: =2
+
+    ContainerProgramarMttoHta As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Visible: =avisoProgramarMttoHta
+        Width: =Parent.Width
+        ZIndex: =10
+
+        Container38 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+        Container1 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =Parent.Height - 160
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoProgramarMttoHta
+            Width: =Parent.Width
+            Y: =80
+            ZIndex: =2
+
+            subtituloProgMttoHtasAdmin As label:
+                Align: =Align.Center
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="PROGRAMAR MANTENIMIENTO"
+                Width: =600
+                X: =383
+                Y: =126
+                ZIndex: =1
+
+            lblSugerenciaMttoProg As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(184, 0, 0, 1)
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =60
+                Italic: =true
+                PaddingTop: =0
+                Size: =10
+                Text: =galProgMantenimientosHtasAdmin.Selected.observaciones_hta & " !!"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =250
+                ZIndex: =2
+
+            formProgMttoHtasAdmin As form:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DataSource: =Mtto_hta
+                Height: =300
+                LayoutMinHeight: =250
+                LayoutMinWidth: =400
+                NumberOfColumns: =4
+                OnSuccess: =
+                ZIndex: =3
+
+                no_precinto_hta_DataCard3 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="no_precinto_hta"
+                    Default: =ThisItem.no_precinto_hta
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,no_precinto_hta)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@Mtto_hta], DataSourceInfo.MaxLength, no_precinto_hta)
+                    Required: =false
+                    Update: =DataCardValue52.Text
+                    Width: =341
+                    X: =1
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey52 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="NO. PRECINTO:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue52 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =galProgMantenimientosHtasAdmin.Selected.no_precinto_hta
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Format: =TextFormat.Number
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        OnSelect: =
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                tecnico_mtto_DataCard1 As typedDataCard.comboBoxEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="tecnico_mtto"
+                    Default: =ThisItem.tecnico_mtto
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,tecnico_mtto)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =83
+                    Required: =false
+                    Update: =DataCardValue16.Selected
+                    Width: =341
+                    X: =1
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey16 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* TÉCNICO:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue16 As combobox:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(102, 102, 102, 1)
+                        ChevronHoverBackground: =Color.Black
+                        DefaultSelectedItems: =Parent.Default
+                        DisplayFields: =["Value"]
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        Items: =Choices([@Mtto_hta].tecnico_mtto)
+                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                        PressedFill: =RGBA(102, 102, 102, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =Choices(Mtto_hta.tecnico_mtto,DataCardValue16.SearchText)
+                        SelectionFill: =RGBA(128, 128, 128, 1)
+                        SelectMultiple: =false
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                fecha_mtto_DataCard1 As typedDataCard.dateEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="fecha_mtto"
+                    Default: =ThisItem.fecha_mtto
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,fecha_mtto)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =83
+                    Required: =false
+                    Update: =DataCardValue33.SelectedDate
+                    Width: =341
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey33 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* FECHA:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue33 As datepicker:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        DefaultDate: =Parent.Default
+                        DisplayMode: =Parent.DisplayMode
+                        EndYear: =Year(Today())+100
+                        Font: =Font.Lato
+                        Height: =35
+                        IconBackground: =RGBA(102, 102, 102, 1)
+                        IsEditable: =true
+                        PaddingBottom: =0
+                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                        Size: =10
+                        StartYear: =1899
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                tipo_mtto_DataCard1 As typedDataCard.comboBoxEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="tipo_mtto"
+                    Default: =ThisItem.tipo_mtto
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,tipo_mtto)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    Required: =false
+                    Update: |-
+                        ={Value: DataCardValue34.Text}
+                    Width: =341
+                    X: =1
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey34 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="TIPO DE MANTENIMIENTO:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue34 As text:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        BorderThickness: =1
+                        Default: =galProgMantenimientosHtasAdmin.Selected.estado_hta.Value
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =3
+
+                codigo_hta_DataCard2 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="codigo_hta"
+                    Default: =ThisItem.codigo_hta
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,codigo_hta)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@Mtto_hta], DataSourceInfo.MaxLength, codigo_hta)
+                    Required: =false
+                    Update: =DataCardValue35.Text
+                    Width: =341
+                    X: =2
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey35 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* CÓDIGO:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue35 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =galProgMantenimientosHtasAdmin.Selected.codigo_hta
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                descripcion_hta_DataCard3 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="descripcion_hta"
+                    Default: =ThisItem.descripcion_hta
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,descripcion_hta)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@Mtto_hta], DataSourceInfo.MaxLength, descripcion_hta)
+                    Required: =false
+                    Update: =DataCardValue36.Text
+                    Width: =341
+                    X: =3
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey36 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* DESCRIPCIÓN:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue36 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =galProgMantenimientosHtasAdmin.Selected.descripcion_hta
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                capacidad_hta_DataCard3 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="capacidad_hta"
+                    Default: =ThisItem.capacidad_hta
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,capacidad_hta)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =83
+                    MaxLength: =DataSourceInfo([@Mtto_hta], DataSourceInfo.MaxLength, capacidad_hta)
+                    Required: =false
+                    Update: =DataCardValue37.Text
+                    Width: =341
+                    X: =0
+                    Y: =1
+                    ZIndex: =3
+
+                    DataCardKey37 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="CAPACIDAD:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue37 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =galProgMantenimientosHtasAdmin.Selected.capacidad_hta
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                no_trabajadores_DataCard1 As typedDataCard.numberEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="no_trabajadores"
+                    Default: =ThisItem.no_trabajadores
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,no_trabajadores)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    Required: =false
+                    Update: =Value(DataCardValue38.Text)
+                    Width: =341
+                    X: =2
+                    Y: =1
+                    ZIndex: =3
+
+                    DataCardKey38 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* N:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue38 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Format: =TextFormat.Number
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                duracion_actividad_DataCard1 As typedDataCard.numberEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="duracion_actividad"
+                    Default: =ThisItem.duracion_actividad
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,duracion_actividad)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    Required: =false
+                    Update: =Value(DataCardValue39.Text)
+                    Width: =341
+                    X: =3
+                    Y: =1
+                    ZIndex: =3
+
+                    DataCardKey39 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* D:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue39 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Format: =TextFormat.Number
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                horas_hombre_DataCard1 As typedDataCard.numberEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="horas_hombre"
+                    Default: =ThisItem.horas_hombre
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,horas_hombre)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    Required: =false
+                    Update: =Value(DataCardValue40.Text)
+                    Width: =341
+                    X: =0
+                    Y: =2
+                    ZIndex: =3
+
+                    DataCardKey40 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="*W:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue40 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Format: =TextFormat.Number
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                nombre_usuario_DataCard3 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="nombre_usuario"
+                    Default: =ThisItem.nombre_usuario
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Mtto_hta],DataSourceInfo.DisplayName,nombre_usuario)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@Mtto_hta], DataSourceInfo.MaxLength, nombre_usuario)
+                    Required: =false
+                    Update: =DataCardValue43.Text
+                    Width: =341
+                    X: =2
+                    Y: =2
+                    ZIndex: =3
+
+                    DataCardKey43 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="PROGRAMADO POR:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue43 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        DelayOutput: =true
+                        DisplayMode: =DisplayMode.View
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+            lblMsjCampoObligatorio_3 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.End
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                Size: =10
+                Text: ="(*) Campos oligatorios"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =168
+                X: =1043
+                Y: =606
+                ZIndex: =4
+
+            Container2 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =350
+                ZIndex: =5
+
+                btnCancelarProgMttoHtasAdmin As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: =ResetForm(formProgMttoHtasAdmin); Set(avisoProgramarMttoHta, false)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =13
+                    Text: ="CANCELAR"
+                    Width: =138
+                    X: =202
+                    Y: =5
+                    ZIndex: =1
+
+                btnProgramarProgMttoHtasAdmin As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: |-
+                        =If(
+                            IsBlank(DataCardValue33.SelectedDate) || IsBlank(DataCardValue34.Text) || IsBlank(DataCardValue35.Text) || IsBlank(DataCardValue36.Text) ||  IsBlank(DataCardValue38.Text) || IsBlank(DataCardValue39.Text) || IsBlank(DataCardValue40.Text) || IsBlank(DataCardValue16.SelectedItems),
+                            Notify(
+                                "¡Existen campos obligatorios sin llenar, verifique por favor!",
+                                NotificationType.Error,
+                                2500
+                            ),
+                            Patch(
+                                Mtto_hta,
+                                Defaults(Mtto_hta),
+                                {
+                                    fecha_mtto: formProgMttoHtasAdmin.Updates.fecha_mtto,
+                                    tipo_mtto: {Value: formProgMttoHtasAdmin.Updates.tipo_mtto.Value},
+                                    codigo_hta: formProgMttoHtasAdmin.Updates.codigo_hta,
+                                    tipo_hta: galProgMantenimientosHtasAdmin.Selected.tipo_hta,
+                                    descripcion_hta: formProgMttoHtasAdmin.Updates.descripcion_hta,
+                                    capacidad_hta: formProgMttoHtasAdmin.Updates.capacidad_hta,
+                                    no_precinto_hta: formProgMttoHtasAdmin.Updates.no_precinto_hta,
+                                    no_trabajadores: formProgMttoHtasAdmin.Updates.no_trabajadores,
+                                    duracion_actividad: formProgMttoHtasAdmin.Updates.duracion_actividad,
+                                    horas_hombre: formProgMttoHtasAdmin.Updates.horas_hombre,
+                                    tipo_programacion: "PROGRAMADO",
+                                    estado_mtto: "PENDIENTE",
+                                    observaciones_hta: galProgMantenimientosHtasAdmin.Selected.observaciones_hta,
+                                    tecnico_mtto: {Value: formProgMttoHtasAdmin.Updates.tecnico_mtto.Value},
+                                    nombre_usuario: formProgMttoHtasAdmin.Updates.nombre_usuario
+                                }
+                            );
+                            Patch(
+                                Hta_Cmsa,
+                                LookUp(Hta_Cmsa, codigo_hta = galProgMantenimientosHtasAdmin.Selected.codigo_hta),
+                                {
+                                    estado_hta: {Value: "MTTO PENDIENTE"}
+                                }
+                            );
+                            Set(
+                                    avisoProgramarMttoHta,
+                                    false
+                            );
+                            ResetForm(formProgMttoHtasAdmin);
+                            Reset(txtBuscarHtaCertCMSA_1);
+                            Notify(
+                                "¡Mtto programado con éxito!",
+                                NotificationType.Success,
+                                2500
+                            )
+                        )
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =13
+                    Text: ="PROGRAMAR"
+                    Width: =138
+                    X: =10
+                    Y: =5
+                    ZIndex: =2
+
+        Container39 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+

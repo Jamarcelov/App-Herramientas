@@ -1,0 +1,308 @@
+{
+  "05a72293-ad66-4347-8106-48c2bd49df1d": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive para la Empresa",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1689/1.0.1689.3722/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "b804fb20-e100-40ef-8882-83bb40f78db9"
+    ],
+    "id": "05a72293-ad66-4347-8106-48c2bd49df1d"
+  },
+  "169a6039-214e-43ba-bf2e-48dce18978bc": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "4292f64b-b4be-494b-8e3a-28fb628270a7": {
+          "value": "shared_sharepointonline"
+        },
+        "be7b6d09-f850-4624-bc1a-5c41ea597218": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "NotificacionDevolucionHta"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ed83b6dd-5a75-4cae-814a-f312aa6dbed3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "be7b6d09-f850-4624-bc1a-5c41ea597218"
+        },
+        "shared_sharepointonline": {
+          "value": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+        },
+        "workflowDisplayName": {
+          "value": "NotificacionDevolucionHta"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ed83b6dd-5a75-4cae-814a-f312aa6dbed3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "NotificacionDevolucionHta"
+    ],
+    "dependencies": {
+      "shared_office365": "be7b6d09-f850-4624-bc1a-5c41ea597218",
+      "shared_sharepointonline": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+    },
+    "dependents": [],
+    "id": "169a6039-214e-43ba-bf2e-48dce18978bc"
+  },
+  "4292f64b-b4be-494b-8e3a-28fb628270a7": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1693/1.0.1693.3738/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://south32-my.sharepoint.com/personal/marcj1_south32_net": {
+        "dataSources": {
+          "Cliente_cmsa_htria_ppal": {
+            "tableName": "5502391b-d5c0-4168-b034-b8666b66bddd"
+          },
+          "Hta_Cmsa": {
+            "tableName": "c452260b-9e07-4b64-bc54-a8b43b9fd918"
+          },
+          "Hta_contratista": {
+            "tableName": "67b6def7-cae1-4910-bd4b-4dc755e5ec4e"
+          },
+          "Mtto_hta": {
+            "tableName": "9a873a81-7b86-456e-9108-6867b48d339e"
+          },
+          "Prestamo_Hta": {
+            "tableName": "8e8d9142-d9aa-4637-8e5b-7a202825d685"
+          },
+          "Usuario_htria_ppal": {
+            "tableName": "3da9939a-2111-482a-94c1-1239418809e4"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Usuario_htria_ppal",
+      "Hta_Cmsa",
+      "Mtto_hta",
+      "Prestamo_Hta",
+      "Cliente_cmsa_htria_ppal",
+      "Hta_contratista"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "915c707e-53e8-4b80-adc3-b5ba3f8dcc8b",
+      "bc3089a9-a73b-4440-9e5b-ea9c946f7db6",
+      "169a6039-214e-43ba-bf2e-48dce18978bc"
+    ],
+    "id": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+  },
+  "915c707e-53e8-4b80-adc3-b5ba3f8dcc8b": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "4292f64b-b4be-494b-8e3a-28fb628270a7": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "ObtenerHtaCertContra"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "064594e0-5f8f-4d38-b5b6-c844fee1eed3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+        },
+        "workflowDisplayName": {
+          "value": "ObtenerHtaCertContra"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "064594e0-5f8f-4d38-b5b6-c844fee1eed3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ObtenerHtaCertContra"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+    },
+    "dependents": [],
+    "id": "915c707e-53e8-4b80-adc3-b5ba3f8dcc8b"
+  },
+  "ac4040f4-59ab-4435-910f-26675fb5b4c3": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive para la Empresa",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1689/1.0.1689.3722/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "b804fb20-e100-40ef-8882-83bb40f78db9"
+    ],
+    "id": "ac4040f4-59ab-4435-910f-26675fb5b4c3"
+  },
+  "b804fb20-e100-40ef-8882-83bb40f78db9": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "05a72293-ad66-4347-8106-48c2bd49df1d": {
+          "value": "shared_onedriveforbusiness_1"
+        },
+        "ac4040f4-59ab-4435-910f-26675fb5b4c3": {
+          "value": "shared_onedriveforbusiness"
+        },
+        "workflowDisplayName": {
+          "value": "GenerarPDFListaHtaPrestadas"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "21ed596c-bc4a-4294-8f25-6e6d61206692"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_onedriveforbusiness": {
+          "value": "ac4040f4-59ab-4435-910f-26675fb5b4c3"
+        },
+        "shared_onedriveforbusiness_1": {
+          "value": "05a72293-ad66-4347-8106-48c2bd49df1d"
+        },
+        "workflowDisplayName": {
+          "value": "GenerarPDFListaHtaPrestadas"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "21ed596c-bc4a-4294-8f25-6e6d61206692"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "GenerarPDFListaHtaPrestadas"
+    ],
+    "dependencies": {
+      "shared_onedriveforbusiness": "ac4040f4-59ab-4435-910f-26675fb5b4c3",
+      "shared_onedriveforbusiness_1": "05a72293-ad66-4347-8106-48c2bd49df1d"
+    },
+    "dependents": [],
+    "id": "b804fb20-e100-40ef-8882-83bb40f78db9"
+  },
+  "bc3089a9-a73b-4440-9e5b-ea9c946f7db6": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "4292f64b-b4be-494b-8e3a-28fb628270a7": {
+          "value": "shared_sharepointonline"
+        },
+        "be7b6d09-f850-4624-bc1a-5c41ea597218": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "NotificacionPrestamoHta"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "31d244b5-5179-4ec6-a07a-829a1c2939be"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "be7b6d09-f850-4624-bc1a-5c41ea597218"
+        },
+        "shared_sharepointonline": {
+          "value": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+        },
+        "workflowDisplayName": {
+          "value": "NotificacionPrestamoHta"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "31d244b5-5179-4ec6-a07a-829a1c2939be"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "NotificacionPrestamoHta"
+    ],
+    "dependencies": {
+      "shared_office365": "be7b6d09-f850-4624-bc1a-5c41ea597218",
+      "shared_sharepointonline": "4292f64b-b4be-494b-8e3a-28fb628270a7"
+    },
+    "dependents": [],
+    "id": "bc3089a9-a73b-4440-9e5b-ea9c946f7db6"
+  },
+  "be7b6d09-f850-4624-bc1a-5c41ea597218": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office\u00A0365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3706/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "bc3089a9-a73b-4440-9e5b-ea9c946f7db6",
+      "169a6039-214e-43ba-bf2e-48dce18978bc"
+    ],
+    "id": "be7b6d09-f850-4624-bc1a-5c41ea597218"
+  }
+}

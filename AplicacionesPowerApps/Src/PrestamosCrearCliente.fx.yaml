@@ -1,0 +1,408 @@
+PrestamosCrearCliente As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    Container10_2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =39
+
+        header_23 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            iconUbicacionCrearHtaCMSA_1 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =30
+                Icon: =Icon.Waypoint
+                PaddingLeft: =10
+                Visible: =PrestamosCrearCliente.Size <> 1
+                Width: =30
+                X: =113
+                Y: =1
+                ZIndex: =1
+
+            txUbicacionCrearHtaCMSA_1 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =8
+                Text: |-
+                    ="Herramientas - CMSA
+                    "
+                Visible: =PrestamosCrearCliente.Size <> 1
+                Width: =160
+                X: =30
+                Y: =70
+                ZIndex: =2
+
+            tituloCrearHtaCMSA_1 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="CLIENTES - CMSA"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =3
+
+            iconUsuarioCrearHtaCMSA_1 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =4
+
+            txtUsuarioCrearHtaCMSA_1 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =PrestamosCrearCliente.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =5
+
+        body_23 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingBottom: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            subtituloCertCrearHtaCMSA_1 As label:
+                Align: =Align.Center
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="CREAR/EDITAR CLIENTE"
+                Width: =600
+                X: =383
+                Y: =126
+                ZIndex: =1
+
+            formCrearClienteCMSA As form:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DataSource: =Cliente_cmsa_htria_ppal
+                Height: =480
+                Item: =galClientesCMSA.Selected
+                LayoutMinHeight: =250
+                LayoutMinWidth: =400
+                NumberOfColumns: =4
+                OnSuccess: =Back()
+                ZIndex: =2
+
+                cedula_cliente_DataCard1 As typedDataCard.numberEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="cedula_cliente"
+                    Default: =ThisItem.cedula_cliente
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Cliente_cmsa_htria_ppal],DataSourceInfo.DisplayName,cedula_cliente)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =83
+                    Required: =false
+                    Update: =Value(DataCardValue60.Text)
+                    Width: =341
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey60 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* CÉDULA:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue60 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Format: =TextFormat.Number
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                nombre_cliente_DataCard1 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="nombre_cliente"
+                    Default: =ThisItem.nombre_cliente
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Cliente_cmsa_htria_ppal],DataSourceInfo.DisplayName,nombre_cliente)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =83
+                    MaxLength: =DataSourceInfo([@Cliente_cmsa_htria_ppal], DataSourceInfo.MaxLength, nombre_cliente)
+                    Required: =false
+                    Update: =DataCardValue61.Text
+                    Width: =341
+                    X: =1
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey61 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="* NOMBRE:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue61 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+                email_cliente_DataCard1 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="email_cliente"
+                    Default: =ThisItem.email_cliente
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@Cliente_cmsa_htria_ppal],DataSourceInfo.DisplayName,email_cliente)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@Cliente_cmsa_htria_ppal], DataSourceInfo.MaxLength, email_cliente)
+                    Required: =false
+                    Update: =DataCardValue62.Text
+                    Width: =341
+                    X: =2
+                    Y: =0
+                    ZIndex: =3
+
+                    DataCardKey62 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        Size: =10
+                        Text: |-
+                            ="CORREO:"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue62 As text:
+                        BorderColor: =Color.Black
+                        BorderThickness: =1
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverBorderColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =40
+                        ZIndex: =2
+
+            lblMsjCampoObligatorio_11 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.End
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                Size: =10
+                Text: ="(*) Campos oligatorios"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =168
+                X: =1043
+                Y: =606
+                ZIndex: =3
+
+            btnGuardarCrearHtaCMSA_3 As button:
+                Fill: =RGBA(102, 102, 102, 1)
+                HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                OnSelect: |-
+                    =If(
+                        IsBlank(DataCardValue60.Text) || IsBlank(DataCardValue61.Text),
+                        Notify(
+                            "¡Existen campos obligatorios sin llenar, verifique por favor!",
+                            NotificationType.Error,
+                            2500
+                        ),
+                        SubmitForm(formCrearClienteCMSA);
+                        Notify(
+                            "¡Cliente creado con éxito!",
+                            NotificationType.Success,
+                            2500
+                        );
+                        Reset(txtBuscarHtaCertCMSA_3)
+                    )
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Text: ="GUARDAR"
+                Width: =138
+                X: =614
+                Y: =637
+                ZIndex: =4
+
+        footer_23 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_36 As rectangle:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =696
+                ZIndex: =1
+
+            Container28_9 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                txtPiePaginaCrearHtaCMSA_1 As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Italic: =true
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =564
+                    Y: =715
+                    ZIndex: =1
+
+                iconAtrasCrearCrearHtaCMSA_1 As icon.OpenInNewWindow:
+                    AlignInContainer: =AlignInContainer.Center
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.BackArrow
+                    OnSelect: =ResetForm(formCrearClienteCMSA); Back()
+                    PaddingRight: =10
+                    Width: =55
+                    X: =25
+                    Y: =10
+                    ZIndex: =2
+

@@ -1,0 +1,269 @@
+Inicio As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    ContainerInicio As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =16
+
+        headerInicio As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            tituloInicio As label:
+                Align: =Align.Center
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =10
+                Text: ="PRÉSTAMOS, MANTENIMIENTOS Y CERTIFICACIONES DE HERRAMIENTAS"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =1
+
+            iconUsuarioInicio As icon.Lock:
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =3
+
+            txtUsuarioInicio As label:
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =Inicio.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =4
+
+        bodyInicio As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container16 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =150
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =200
+                ZIndex: =6
+
+                lblPrestamos As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    OnSelect: =Navigate(Prestamos, ScreenTransition.Cover)
+                    Size: =10
+                    Text: ="PRÉSTAMOS"
+                    VerticalAlign: =VerticalAlign.Bottom
+                    X: =25
+                    Y: =107
+                    ZIndex: =1
+
+                imgPrestamos As image:
+                    Height: =107
+                    Image: =iconPrestamos
+                    OnSelect: =Navigate(Prestamos, ScreenTransition.Cover)
+                    Width: =130
+                    X: =35
+                    Y: =11
+                    ZIndex: =2
+
+            Container17 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =150
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =200
+                ZIndex: =7
+
+                lblCertificaciones As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    OnSelect: =Navigate(Certificaciones, ScreenTransition.Cover)
+                    Size: =10
+                    Text: |-
+                        ="CERTIFICACIONES
+                        "
+                    VerticalAlign: =VerticalAlign.Bottom
+                    Width: =177
+                    X: =12
+                    Y: =108
+                    ZIndex: =1
+
+                imgCertificaciones As image:
+                    Height: =110
+                    Image: =iconCertificaciones
+                    OnSelect: =Navigate(Certificaciones, ScreenTransition.Cover)
+                    Width: =110
+                    X: =45
+                    Y: =10
+                    ZIndex: =2
+
+            Container18 As groupContainer.manualLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =150
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =200
+                ZIndex: =8
+
+                lblMttos As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    OnSelect: |-
+                        =If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Administrador",
+                        Navigate(MantenimientosAdmin, ScreenTransition.Cover), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Técnico", Navigate(MantenimientosTecnico, ScreenTransition.Cover), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error, 2500)))
+                    Size: =10
+                    Text: |-
+                        ="MANTENIMIENTOS
+                        "
+                    VerticalAlign: =VerticalAlign.Bottom
+                    Width: =194
+                    X: =3
+                    Y: =110
+                    ZIndex: =1
+
+                imgMttos As image:
+                    Height: =105
+                    Image: =iconMttos
+                    OnSelect: |-
+                        =If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Administrador",
+                        Navigate(MantenimientosAdmin, ScreenTransition.Cover), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Técnico", Navigate(MantenimientosTecnico, ScreenTransition.Cover), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error, 2500)))
+                    Width: =105
+                    X: =47
+                    Y: =16
+                    ZIndex: =2
+
+        footerInicio As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_16 As rectangle:
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =671
+                ZIndex: =1
+
+            Container11 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =5
+
+                txtPiePaginaInicio As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Height: =75
+                    Italic: =true
+                    PaddingTop: =10
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =531
+                    Y: =34
+                    ZIndex: =1
+
+                iconCerrarSesion As icon.BackArrow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.Leave
+                    OnSelect: |-
+                        =//Reset(txtUsuario);; Reset(txtClave);; Navigate(Login; ScreenTransition.CoverRight)
+                        Exit()
+                    PaddingRight: =10
+                    Width: =55
+                    ZIndex: =2
+

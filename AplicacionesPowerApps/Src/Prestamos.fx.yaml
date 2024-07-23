@@ -1,0 +1,315 @@
+Prestamos As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    Container12_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =13
+
+        header_7 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            tituloPrestamos As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="PRÉSTAMOS"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =1
+
+            iconUsuarioPrestamos As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                LayoutMinHeight: =80
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =2
+
+            txtUsuarioPrestamos As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =Prestamos.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =3
+
+        body_7 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container47 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.End
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                lblSubtituloPrestamos As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Size: =12
+                    Text: ="SELECCIONE UNA UBICACIÓN Y UN TURNO"
+                    ZIndex: =1
+
+            Container5_1 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =Parent.Width
+                ZIndex: =2
+
+                Container7_1 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =80
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =7
+
+                    Group2 As group:
+                        Height: =5
+                        Width: =5
+                        X: =60
+                        Y: =60
+                        ZIndex: =4
+
+                        iconUbicacionPrestamos As icon.Lock:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =35
+                            Icon: =Icon.Waypoint
+                            Width: =35
+                            X: =80
+                            Y: =19
+                            ZIndex: =2
+
+                        lsUbicacionPrestamos As dropdown:
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            BorderThickness: =1
+                            ChevronBackground: =RGBA(102, 102, 102, 1)
+                            ChevronHoverBackground: =Color.Black
+                            Font: =Font.Lato
+                            HoverFill: =RGBA(166, 166, 166, 1)
+                            Items: =Choices(Prestamo_Hta.ubicacion_prestamo_hta)
+                            PressedFill: =RGBA(102, 102, 102, 1)
+                            SelectionFill: =RGBA(128, 128, 128, 1)
+                            Size: =10
+                            Width: =300
+                            X: =120
+                            Y: =17
+                            ZIndex: =3
+
+                Container8_1 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =80
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    X: =40
+                    ZIndex: =8
+
+                    Group3 As group:
+                        Height: =5
+                        Width: =5
+                        X: =60
+                        Y: =60
+                        ZIndex: =4
+
+                        iconTurnoPrestamos As icon.Lock:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =35
+                            Icon: =Icon.HalfFilledCircle
+                            Width: =35
+                            X: =80
+                            Y: =22
+                            ZIndex: =1
+
+                        lsTurnoPrestamos As dropdown:
+                            BorderColor: =RGBA(0, 0, 0, 1)
+                            BorderThickness: =1
+                            ChevronBackground: =RGBA(102, 102, 102, 1)
+                            ChevronHoverBackground: =Color.Black
+                            Font: =Font.Lato
+                            HoverFill: =RGBA(166, 166, 166, 1)
+                            Items: =Choices(Prestamo_Hta.turno_prestamo_hta)
+                            PressedFill: =RGBA(102, 102, 102, 1)
+                            SelectionFill: =RGBA(128, 128, 128, 1)
+                            Size: =10
+                            Width: =300
+                            X: =120
+                            Y: =20
+                            ZIndex: =3
+
+            Container37 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                btnContinuarPrestamos As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: =If(lsUbicacionPrestamos.SelectedText.Value = "-- SELECCIONAR --" || lsTurnoPrestamos.SelectedText.Value = "-- SELECCIONAR --", Notify("¡Por favor, seleccionar una ubicación y un turno!", NotificationType.Error, 2500), Set(varUbicacion, lsUbicacionPrestamos.SelectedText.Value); Set(varTurno, lsTurnoPrestamos.SelectedText.Value);Navigate(PrestamosCrearEditarHtaCliente, ScreenTransition.Cover))
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Text: ="CONTINUAR"
+                    Width: =138
+                    X: =614
+                    Y: =637
+                    ZIndex: =1
+
+        footer_7 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_21 As rectangle:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =671
+                ZIndex: =1
+
+            Container23_1 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                txtPiePaginaPrestamos As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Height: =75
+                    Italic: =true
+                    PaddingTop: =10
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =531
+                    Y: =34
+                    ZIndex: =1
+
+                iconAtrasPrestamos As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.Home
+                    OnSelect: =Navigate(Inicio, ScreenTransition.CoverRight); Reset(lsUbicacionPrestamos); Reset(lsTurnoPrestamos)
+                    PaddingRight: =10
+                    Width: =55
+                    X: =1242
+                    Y: =580
+                    ZIndex: =2
+

@@ -1,0 +1,790 @@
+PrestamosCrearEditarCliente As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+    OnVisible: =
+
+    Container24_5 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =8
+
+        header_24 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            iconUbicacionHtasCertCMSA_10 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =30
+                Icon: =Icon.Waypoint
+                PaddingLeft: =10
+                Visible: =PrestamosCrearEditarCliente.Size <> 1
+                Width: =30
+                X: =113
+                Y: =1
+                ZIndex: =1
+
+            txUbicacionHtasCertCMSA_14 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =8
+                Text: |-
+                    ="Herramientas - CMSA
+                    "
+                Visible: =PrestamosCrearEditarCliente.Size <> 1
+                Width: =160
+                X: =30
+                Y: =70
+                ZIndex: =2
+
+            tituloCertCMSA_1 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =12
+                Text: ="CLIENTES - CMSA"
+                Width: =666
+                X: =350
+                Y: =35
+                ZIndex: =3
+
+            iconUsuarioCertCMSA_1 As icon.Lock:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(77, 77, 77, 1)
+                Height: =30
+                Icon: =Icon.Person
+                Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Width: =80
+                X: =777
+                Y: =36
+                ZIndex: =4
+
+            txtUsuarioCertCMSA_1 As label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Fill: =RGBA(237, 237, 237, 1)
+                Font: =Font.Lato
+                Height: =32
+                Italic: =true
+                Size: =10
+                Text: |-
+                    ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                Visible: =PrestamosCrearEditarCliente.Size <> 1
+                Width: =169
+                X: =807
+                Y: =36
+                ZIndex: =5
+
+        body_24 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            Container29_11 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                PaddingTop: =15
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                IconBuscarHtaCertCMSA_3 As icon.ZoomIn:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =40
+                    Icon: =Icon.Search
+                    PaddingRight: =5
+                    Width: =40
+                    X: =441
+                    Y: =133
+                    ZIndex: =1
+
+                txtBuscarHtaCertCMSA_3 As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Default: =""
+                    Font: =Font.Lato
+                    HintText: ="Buscar por número de cédula"
+                    HoverBorderColor: =RGBA(102, 102, 102, 1)
+                    HoverFill: =RGBA(237, 237, 237, 1)
+                    Italic: =true
+                    Size: =12
+                    Width: =300
+                    X: =49
+                    Y: =133
+                    ZIndex: =2
+
+            "galClientesCMSA As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =388
+                Items: |-
+                    =If(
+                        IsBlank(txtBuscarHtaCertCMSA_3.Text),
+                        Cliente_cmsa_htria_ppal,
+                        Filter(
+                            Cliente_cmsa_htria_ppal,
+                            cedula_cliente = LookUp(
+                                Cliente_cmsa_htria_ppal,
+                                cedula_cliente = Value(txtBuscarHtaCertCMSA_3.Text),
+                                cedula_cliente
+                            )
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =15
+                TemplateSize: =150
+                Width: =1361
+                WrapCount: =PrestamosCrearEditarCliente.Size
+                X: =5
+                Y: =3
+                ZIndex: =2
+
+                Rectangle6_11 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Width: =1
+                    Y: =25
+                    ZIndex: =1
+
+                Rectangle5_11 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(166, 166, 166, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =307
+                    X: =8
+                    Y: =141
+                    ZIndex: =2
+
+                correoClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =37
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.email_cliente
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =199
+                    X: =69
+                    Y: =88
+                    ZIndex: =15
+
+                tituloCorreoClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Correo:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =61
+                    X: =8
+                    Y: =88
+                    ZIndex: =16
+
+                cedulaClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.cedula_cliente
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =nombreClienteCMSA.Width
+                    X: =69
+                    Y: =48
+                    ZIndex: =17
+
+                tituloCedulaClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Cédula:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =61
+                    X: =8
+                    Y: =48
+                    ZIndex: =18
+
+                nombreClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =41
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.nombre_cliente
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =199
+                    X: =69
+                    Y: =7
+                    ZIndex: =19
+
+                tituloNombreClienteCMSA As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =18
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Nombre:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =61
+                    X: =8
+                    Y: =7
+                    ZIndex: =20
+
+                iconEliminarHtaCertCMSA_1 As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =45
+                    Icon: =Icon.Trash
+                    OnSelect: =Set(avisoEliminarCliente, true)
+                    Width: =45
+                    X: =268
+                    Y: =84
+                    ZIndex: =21
+
+                iconEditarHtaCertCMSA_1 As icon.OpenInNewWindow:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =45
+                    Icon: =Icon.Edit
+                    OnSelect: =EditForm(formCrearClienteCMSA); Navigate(PrestamosCrearCliente, ScreenTransition.Cover)
+                    Width: =45
+                    X: =268
+                    Y: =13
+                    ZIndex: =22
+
+            Container30_12 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =90
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingTop: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                Container32_9 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =90
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =100
+                    ZIndex: =1
+
+                    Group15_5 As group:
+                        Height: =5
+                        Width: =5
+                        X: =40
+                        Y: =40
+                        ZIndex: =7
+
+                        lblCrearHtaCertCMSA_5 As label:
+                            Align: =Align.Center
+                            Font: =Font.Lato
+                            Height: =20
+                            Italic: =true
+                            Size: =10
+                            Text: ="Crear cliente"
+                            Width: =100
+                            Y: =60
+                            ZIndex: =5
+
+                        iconCrearHtaCertCMSA_5 As icon.OpenInNewWindow:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =50
+                            Icon: =Icon.Add
+                            OnSelect: =NewForm(formCrearClienteCMSA); Navigate(PrestamosCrearCliente, ScreenTransition.Cover)
+                            Width: =50
+                            X: =25
+                            Y: =10
+                            ZIndex: =6
+
+                Container35_11 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    LayoutMinHeight: =90
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =100
+                    ZIndex: =2
+
+                    Group16_9 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-181
+                        Y: =20
+                        ZIndex: =3
+
+                        lblActualizarCertCMSA_6 As label:
+                            Align: =Align.Center
+                            Font: =Font.Lato
+                            Height: =20
+                            Italic: =true
+                            Size: =10
+                            Text: ="Actualizar"
+                            Width: =100
+                            Y: =60
+                            ZIndex: =1
+
+                        iconActualizarCertCMSA_6 As icon.OpenInNewWindow:
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =50
+                            Icon: =Icon.Reload
+                            OnSelect: =Refresh(Cliente_cmsa_htria_ppal)
+                            Width: =50
+                            X: =25
+                            Y: =10
+                            ZIndex: =2
+
+        footer_24 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            lineaPie_37 As rectangle:
+                AlignInContainer: =AlignInContainer.Center
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Width: =Parent.Width - 50
+                X: =33
+                Y: =696
+                ZIndex: =1
+
+            Container28_8 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =75
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                txtPiePaginaCertCMSA_1 As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    Italic: =true
+                    Size: =12
+                    Text: ="Herramentería CMSA - " & Text(Today(), "yyyy") 
+                    Width: =238
+                    X: =564
+                    Y: =715
+                    ZIndex: =1
+
+                iconAtrasCertCMSA_1 As icon.OpenInNewWindow:
+                    AlignInContainer: =AlignInContainer.Center
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =55
+                    Icon: =Icon.BackArrow
+                    OnSelect: =Reset(txtBuscarHtaCertCMSA_3); Back()
+                    PaddingRight: =10
+                    Width: =55
+                    X: =25
+                    Y: =10
+                    ZIndex: =2
+
+    Container14_4 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =avisoEliminarCliente
+        Width: =Parent.Width
+        ZIndex: =9
+
+        Container15_4 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =420
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Visible: =avisoEliminarCliente
+            Width: =450
+            ZIndex: =1
+
+            Container22_4 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoEliminarCliente
+                Width: =Parent.Width
+                ZIndex: =1
+
+                iconAdvertenciaAvisoEliminarClienteCMSA As icon.Warning:
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =40
+                    Icon: =Icon.Warning
+                    Visible: =avisoEliminarCliente
+                    Width: =40
+                    X: =158
+                    Y: =66
+                    ZIndex: =1
+
+                tituloAdvertenciaAvisoEliminarClienteCMSA As label:
+                    Align: =Align.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Size: =12
+                    Text: ="ELIMINAR CLIENTE"
+                    Visible: =avisoEliminarCliente
+                    Width: =250
+                    X: =356
+                    Y: =14
+                    ZIndex: =2
+
+            lineaAvisoEliminarClienteCMSA As rectangle:
+                BorderColor: =RGBA(253, 235, 1, 1)
+                Fill: =RGBA(253, 235, 1, 1)
+                Height: =3
+                Visible: =avisoEliminarCliente
+                Width: =Parent.Width - 50
+                X: =233
+                Y: =133
+                ZIndex: =2
+
+            lblPreguntaAvisoEliminarClienteCMSA As label:
+                Align: =Align.Center
+                Color: =RGBA(184, 0, 0, 1)
+                FillPortions: =1
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Italic: =true
+                Size: =10
+                Text: ="¿Está seguro(a) de eliminar este cliente?"
+                Visible: =avisoEliminarCliente
+                Width: =369
+                X: =266
+                Y: =44
+                ZIndex: =3
+
+            "galAvisoEliminarClienteCMSA As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtrada"
+                AlignInContainer: =AlignInContainer.Center
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =240
+                Items: =galClientesCMSA.Selected
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =212
+                Visible: =avisoEliminarCliente
+                Width: =Parent.Width
+                X: =505
+                Y: =247
+                ZIndex: =4
+
+                Group13_7 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =15
+
+                    correoEliminarClienteCMSA As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.email_cliente
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =255
+                        X: =151
+                        Y: =88
+                        ZIndex: =5
+
+                    CedulaEliminarClienteCMSA As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.cedula_cliente
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =169
+                        X: =151
+                        Y: =45
+                        ZIndex: =6
+
+                    nombreEliminarClienteCMSA As label:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Font: =Font.Lato
+                        Height: =42
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =10
+                        Text: =ThisItem.nombre_cliente
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =255
+                        X: =151
+                        Y: =3
+                        ZIndex: =7
+
+                    tituloCorreoEliminarClienteCMSA As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="CORREO:"
+                        Width: =75
+                        X: =76
+                        Y: =88
+                        ZIndex: =12
+
+                    tituloCedulaEliminarClienteCMSA As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="CÉDULA:"
+                        Width: =75
+                        X: =76
+                        Y: =45
+                        ZIndex: =13
+
+                    tituloNombreEliminarClienteCMSA As label:
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: |-
+                            ="NOMBRE:"
+                        Width: =75
+                        X: =76
+                        Y: =3
+                        ZIndex: =14
+
+            Container20_4 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =55
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =30
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Visible: =avisoEliminarCliente
+                Width: =350
+                ZIndex: =5
+
+                btnAvisoEliminarClienteCMSASi As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: |-
+                        =Remove(
+                            Cliente_cmsa_htria_ppal,
+                            galClientesCMSA.Selected
+                        );
+                        Set(
+                            avisoEliminarCliente,
+                            false
+                        );
+                        Notify(
+                            "¡Cliente eliminado con éxito!",
+                            NotificationType.Success,
+                            2500
+                        );
+                        Reset(txtBuscarHtaCertCMSA_3)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="SI"
+                    Visible: =avisoEliminarCliente
+                    Width: =130
+                    X: =289
+                    Y: =507
+                    ZIndex: =1
+
+                btnAvisoEliminarClienteCMSANo As button:
+                    Fill: =RGBA(102, 102, 102, 1)
+                    Font: =Font.Lato
+                    Height: =46
+                    HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                    OnSelect: =Set(avisoEliminarCliente, false)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =14
+                    Text: ="NO"
+                    Visible: =avisoEliminarCliente
+                    Width: =130
+                    X: =225
+                    Y: =507
+                    ZIndex: =2
+
