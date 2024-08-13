@@ -48,7 +48,7 @@ PrestamosBuscarCedulaClienteCodigoHta As screen:
                 Height: =32
                 Italic: =true
                 Size: =9
-                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
                 Visible: =PrestamosBuscarCedulaClienteCodigoHta.Size <> 1
                 Width: =160
                 X: =30
@@ -277,13 +277,13 @@ PrestamosBuscarCedulaClienteCodigoHta As screen:
                                     2500
                                 ),
                                 If(
-                                    IsBlank(txtCedulaCliente.Text) && !IsBlank(txtCodigoHta.Text),
+                                    IsBlank(txtCedulaCliente.Text) && !IsBlank(txtCodigoHta.Text), Set(varCodigoHta, txtCodigoHta.Text); 
                                     Navigate(
                                         PrestamosHistorialCodigoHta,
                                         ScreenTransition.Cover
                                     ),
                                     If(
-                                        !IsBlank(txtCedulaCliente.Text) && IsBlank(txtCodigoHta.Text),
+                                        !IsBlank(txtCedulaCliente.Text) && IsBlank(txtCodigoHta.Text), Set(varCedulaCliente, Value(txtCedulaCliente.Text)); 
                                         Navigate(
                                             PrestamosHistorialCedulaCliente,
                                             ScreenTransition.Cover

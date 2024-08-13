@@ -48,7 +48,7 @@ ListadoPrestamos As screen:
                 Height: =32
                 Italic: =true
                 Size: =9
-                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
                 Visible: =ListadoPrestamos.Size <> 1
                 Width: =160
                 X: =30

@@ -74,7 +74,7 @@ PrestamosHistorialCedulaCliente As screen:
                 Height: =32
                 Italic: =true
                 Size: =9
-                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
                 Visible: =PrestamosHistorialCedulaCliente.Size <> 1
                 Width: =160
                 X: =30
@@ -159,7 +159,7 @@ PrestamosHistorialCedulaCliente As screen:
                 lblDatosCliente As htmlViewer:
                     Font: =Font.Lato
                     HtmlText: |+
-                        ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente) & "</i>"
+                        ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, cedula_cliente) & "</i>"
                         
                     PaddingBottom: =0
                     PaddingLeft: =0
@@ -206,16 +206,16 @@ PrestamosHistorialCedulaCliente As screen:
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =388
-                Items: |-
+                Items: |
                     =If(
                         IsBlank(txtBuscarPrestamosHistorialCedulaCliente.Text),
                         SortByColumns(
                             SortByColumns(
                                 If(
-                                    !IsBlank(txtCedulaCliente.Text),
+                                    !IsBlank(varCedulaCliente),
                                     Filter(
                                         Prestamo_Hta,
-                                        estado_prestamo_hta.Value = "Prestada" && cedula_cliente = Value(txtCedulaCliente.Text)
+                                        ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && cedula_cliente = varCedulaCliente
                                     )
                                 ),
                                 "fecha_prestamo_hta",
@@ -227,10 +227,10 @@ PrestamosHistorialCedulaCliente As screen:
                         SortByColumns(
                             SortByColumns(
                                 If(
-                                    !IsBlank(txtCedulaCliente.Text),
+                                    !IsBlank(varCedulaCliente),
                                     Filter(
                                         Prestamo_Hta,
-                                        estado_prestamo_hta.Value = "Prestada" && cedula_cliente = Value(txtCedulaCliente.Text) && (StartsWith(codigo_hta,txtBuscarPrestamosHistorialCedulaCliente.Text) || StartsWith(descripcion_hta, txtBuscarPrestamosHistorialCedulaCliente.Text))
+                                        ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && cedula_cliente = Value(varCedulaCliente) && (StartsWith(codigo_hta,txtBuscarPrestamosHistorialCedulaCliente.Text) || StartsWith(descripcion_hta, txtBuscarPrestamosHistorialCedulaCliente.Text))
                                     )
                                 ),
                                 "fecha_prestamo_hta",
@@ -240,24 +240,6 @@ PrestamosHistorialCedulaCliente As screen:
                             SortOrder.Descending
                         )
                     )
-                    /*SortByColumns(
-                        Filter(
-                            colRegistrosObtenidos;
-                            contador_cantidad_hta <> "0" && cedula_cliente = Text(
-                                LookUp(
-                                    Cliente_cmsa_htria_ppal;
-                                    cedula_cliente = Value(varCedulaCliente);
-                                    cedula_cliente
-                                )
-                            ) && nombre_cliente = LookUp(
-                                Cliente_cmsa_htria_ppal;
-                                cedula_cliente = Value(varCedulaCliente);
-                                nombre_cliente
-                            )
-                        );
-                        "fecha_prestamo_hta";
-                        SortOrder.Descending
-                    )*/
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320
@@ -746,6 +728,7 @@ PrestamosHistorialCedulaCliente As screen:
 
                         lblActualizarCertCMSA_1 As label:
                             Align: =Align.Center
+                            DisplayMode: =DisplayMode.Disabled
                             Font: =Font.Lato
                             Height: =20
                             Italic: =true
@@ -757,6 +740,7 @@ PrestamosHistorialCedulaCliente As screen:
 
                         iconActualizarCertCMSA_1 As icon.OpenInNewWindow:
                             Color: =RGBA(0, 0, 0, 1)
+                            DisplayMode: =DisplayMode.Disabled
                             Height: =50
                             Icon: =Icon.DocumentPDF
                             OnSelect: =Navigate(HtmlPdf, ScreenTransition.Cover)
@@ -823,7 +807,7 @@ PrestamosHistorialCedulaCliente As screen:
                     Color: =RGBA(0, 0, 0, 1)
                     Height: =55
                     Icon: =Icon.BackArrow
-                    OnSelect: =Navigate(PrestamosBuscarCedulaClienteCodigoHta, ScreenTransition.CoverRight); Reset(txtCedulaCliente); Reset(txtCodigoHta); Reset(txtBuscarPrestamosHistorialCedulaCliente); Clear(listadoHtasPrestar); Clear(listadoHtasDevolver)
+                    OnSelect: =Navigate(PrestamosBuscarCedulaClienteCodigoHta, ScreenTransition.CoverRight); Reset(txtCedulaCliente); Reset(txtCodigoHta); Reset(txtBuscarPrestamosHistorialCedulaCliente); Clear(listadoHtasPrestar); Clear(listadoHtasDevolver); Set(varCedulaCliente, Blank())
                     PaddingRight: =10
                     Width: =55
                     X: =1242
@@ -1155,16 +1139,16 @@ PrestamosHistorialCedulaCliente As screen:
                                 ),
                                 estado_prestamo_hta_dev: "Devuelta",
                                 ubicacion_prestamo_hta_dev: varUbicacion,
-                                ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value, // Aqui modificacion
+                                ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value, 
                                 turno_prestamo_hta_dev: varTurno,
                                 cedula_cliente_dev: LookUp(
                                     Cliente_cmsa_htria_ppal,
-                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    cedula_cliente = varCedulaCliente,
                                     cedula_cliente
                                 ),
                                 nombre_cliente_dev: LookUp(
                                     Cliente_cmsa_htria_ppal,
-                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    cedula_cliente = varCedulaCliente,
                                     nombre_cliente
                                 ),
                                 nombre_usuario_dev: LookUp(
@@ -1540,16 +1524,16 @@ PrestamosHistorialCedulaCliente As screen:
                                     ),
                                     estado_prestamo_hta_dev: "Devuelta",
                                     ubicacion_prestamo_hta_dev: varUbicacion,
-                                    ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value, // Aqui modificacion
+                                    ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value,
                                     turno_prestamo_hta_dev: varTurno,
                                     cedula_cliente_dev: LookUp(
                                         Cliente_cmsa_htria_ppal,
-                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        cedula_cliente = varCedulaCliente,
                                         cedula_cliente
                                     ),
                                     nombre_cliente_dev: LookUp(
                                         Cliente_cmsa_htria_ppal,
-                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        cedula_cliente = varCedulaCliente,
                                         nombre_cliente
                                     ),
                                     nombre_usuario_dev: LookUp(

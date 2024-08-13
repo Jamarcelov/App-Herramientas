@@ -4,8 +4,11 @@
 
     PrintButton1 As Botón:
         Appearance: ='ButtonCanvas.Appearance'.Secondary
+        BasePaletteColor: =
+        BorderColor: =
         BorderStyle: =""
         DisplayMode: =DisplayMode.Edit
+        FontColor: =
         Height: =32
         OnSelect: =Print()
         Text: ="Imprimir"

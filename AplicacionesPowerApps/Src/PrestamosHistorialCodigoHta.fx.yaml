@@ -74,7 +74,7 @@ PrestamosHistorialCodigoHta As screen:
                 Height: =32
                 Italic: =true
                 Size: =9
-                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
                 Visible: =PrestamosHistorialCodigoHta.Size <> 1
                 Width: =160
                 X: =30
@@ -230,18 +230,18 @@ PrestamosHistorialCodigoHta As screen:
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =388
-                Items: |
+                Items: |+
                     =SortByColumns( 
                         SortByColumns(
                         If(
                             IsBlank(txtBuscarPrestamosHistorialCodigoHta.Text),
                             Filter(
                                 Prestamo_Hta,
-                                estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text
+                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text
                             ),
                             Filter(
                                 Prestamo_Hta,
-                                estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text && cedula_cliente = LookUp(
+                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text && cedula_cliente = LookUp(
                                     Cliente_cmsa_htria_ppal,
                                     cedula_cliente = Value(txtBuscarPrestamosHistorialCodigoHta.Text),
                                     cedula_cliente
@@ -255,26 +255,7 @@ PrestamosHistorialCodigoHta As screen:
                         ,
                         SortOrder.Descending
                     ), "contador_cantidad_hta", SortOrder.Descending)
-                    /*If(
-                        IsBlank(txtBuscarPrestamosHistorialCodigoHta.Text);
-                        Filter(
-                        colRegistrosObtenidos;
-                        contador_cantidad_hta <> "0" && codigo_hta = txtCodigoHta.Text);
-                        Filter(
-                        colRegistrosObtenidos;
-                        contador_cantidad_hta <> "0" && codigo_hta = txtCodigoHta.Text && cedula_cliente = Text(
-                            LookUp(
-                                Cliente_cmsa_htria_ppal;
-                                cedula_cliente = Value(txtBuscarPrestamosHistorialCodigoHta.Text);
-                                cedula_cliente
-                            )
-                        ) && nombre_cliente = LookUp(
-                            Cliente_cmsa_htria_ppal;
-                            cedula_cliente = Value(txtBuscarPrestamosHistorialCodigoHta.Text);
-                            nombre_cliente
-                        )
-                    )
-                    )*/
+                    
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320

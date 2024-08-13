@@ -49,7 +49,7 @@ PrestamosHistorialPrestarHta As screen:
                 Height: =32
                 Italic: =true
                 Size: =9
-                Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
                 Visible: =PrestamosHistorialPrestarHta.Size <> 1
                 Width: =160
                 X: =30
@@ -1059,12 +1059,12 @@ PrestamosHistorialPrestarHta As screen:
                                 turno_prestamo_hta: varTurno,
                                 cedula_cliente: LookUp(
                                     Cliente_cmsa_htria_ppal,
-                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    cedula_cliente = varCedulaCliente,
                                     cedula_cliente
                                 ),
                                 nombre_cliente: LookUp(
                                     Cliente_cmsa_htria_ppal,
-                                    cedula_cliente = Value(txtCedulaCliente.Text),
+                                    cedula_cliente = varCedulaCliente,
                                     nombre_cliente
                                 ),
                                 nombre_usuario: LookUp(
@@ -1468,12 +1468,12 @@ PrestamosHistorialPrestarHta As screen:
                                     turno_prestamo_hta: varTurno,
                                     cedula_cliente: LookUp(
                                         Cliente_cmsa_htria_ppal,
-                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        cedula_cliente = varCedulaCliente,
                                         cedula_cliente
                                     ),
                                     nombre_cliente: LookUp(
                                         Cliente_cmsa_htria_ppal,
-                                        cedula_cliente = Value(txtCedulaCliente.Text),
+                                        cedula_cliente = varCedulaCliente,
                                         nombre_cliente
                                     ),
                                     nombre_usuario: LookUp(
