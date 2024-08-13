@@ -11354,36 +11354,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varCodigoHta"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varCodigoHta",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varCodigoHta",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.usuario_sin_foto"
                 }
               ],
@@ -11594,36 +11564,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "PrestamosHistorialPrestarHta.Container12_5.body_18.Container29_6.lblDatosCliente_1.HtmlText"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "PrestamosHistorialPrestarHta.Container12_5.body_18.Container29_6.lblDatosCliente_1.HtmlText",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "HtmlText",
-                "module": "PrestamosHistorialPrestarHta",
-                "type": "PrestamosHistorialPrestarHta.Container12_5.body_18.Container29_6.lblDatosCliente_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "PrestamosHistorialPrestarHta.Container12_5.body_18.galPrestamosPrestarHtaCMSA.WrapCount"
                 }
               ],
@@ -11774,36 +11714,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ListadoPrestamos.Container12_6.body_19.Container29_7.lblDatosCliente_2.HtmlText"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ListadoPrestamos.Container12_6.body_19.Container29_7.lblDatosCliente_2.HtmlText",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "HtmlText",
-                "module": "ListadoPrestamos",
-                "type": "ListadoPrestamos.Container12_6.body_19.Container29_7.lblDatosCliente_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ListadoPrestamos.Container12_6.body_19.galPrestamosListadoPrestar.WrapCount"
                 }
               ],
@@ -11937,36 +11847,6 @@
                 "member": "Visible",
                 "module": "PrestamosHistorialCodigoHta",
                 "type": "PrestamosHistorialCodigoHta.Container12_7.body_20.Container29_8.lblClienteSinHtasPrestadas_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "PrestamosHistorialCodigoHta.Container12_7.body_20.galPrestamosHtaCMSA_1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "PrestamosHistorialCodigoHta.Container12_7.body_20.galPrestamosHtaCMSA_1.Items",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "PrestamosHistorialCodigoHta",
-                "type": "PrestamosHistorialCodigoHta.Container12_7.body_20.galPrestamosHtaCMSA_1"
               }
             }
           ],

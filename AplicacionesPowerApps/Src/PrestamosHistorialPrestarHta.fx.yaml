@@ -157,7 +157,7 @@ PrestamosHistorialPrestarHta As screen:
                 lblDatosCliente_1 As htmlViewer:
                     Font: =Font.Lato
                     HtmlText: |-
-                        ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente) & "</i>"
+                        ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, cedula_cliente) & "</i>"
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0

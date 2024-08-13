@@ -237,11 +237,11 @@ PrestamosHistorialCodigoHta As screen:
                             IsBlank(txtBuscarPrestamosHistorialCodigoHta.Text),
                             Filter(
                                 Prestamo_Hta,
-                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text
+                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = varCodigoHta
                             ),
                             Filter(
                                 Prestamo_Hta,
-                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = txtCodigoHta.Text && cedula_cliente = LookUp(
+                                ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && codigo_hta = varCodigoHta && cedula_cliente = LookUp(
                                     Cliente_cmsa_htria_ppal,
                                     cedula_cliente = Value(txtBuscarPrestamosHistorialCodigoHta.Text),
                                     cedula_cliente
@@ -842,7 +842,7 @@ PrestamosHistorialCodigoHta As screen:
                         Reset(txtCedulaCliente);
                         Reset(txtCodigoHta);
                         Reset(txtBuscarPrestamosHistorialCodigoHta);
-                        Clear(listadoHtasDevolver)
+                        Clear(listadoHtasDevolver); Set(varCodigoHta, Blank())
                     PaddingRight: =10
                     Width: =55
                     X: =1242
@@ -1563,7 +1563,7 @@ PrestamosHistorialCodigoHta As screen:
                                     ),
                                     estado_prestamo_hta_dev: "Devuelta",
                                     ubicacion_prestamo_hta_dev: varUbicacion,
-                                    ubicacion_hta_dev: galPrestamosHtaCMSA_1.Selected.ubicacion_prestamo_hta.Value, // Aqui modificacion
+                                    ubicacion_hta_dev: galPrestamosHtaCMSA_1.Selected.ubicacion_prestamo_hta.Value,
                                     turno_prestamo_hta_dev: varTurno,
                                     cedula_cliente_dev: LookUp(
                                         Cliente_cmsa_htria_ppal,
