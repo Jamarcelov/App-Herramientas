@@ -112,6 +112,7 @@ HtmlPdf1 As screen:
             ZIndex: =2
 
             HtmlText1 As htmlViewer:
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
                 FillPortions: =1
                 Font: =Font.Lato
                 HtmlText: |-

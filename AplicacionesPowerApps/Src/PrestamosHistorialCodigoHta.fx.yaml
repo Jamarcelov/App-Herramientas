@@ -182,6 +182,7 @@ PrestamosHistorialCodigoHta As screen:
                 lblClienteSinHtasPrestadas_1 As htmlViewer:
                     AlignInContainer: =AlignInContainer.Start
                     Color: =RGBA(184, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
                     Font: =Font.Lato
                     HtmlText: |-
                         =If(

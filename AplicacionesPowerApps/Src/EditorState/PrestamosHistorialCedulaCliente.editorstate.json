@@ -1237,7 +1237,7 @@
       "MetaDataIDKey": "",
       "Name": "btnAvisoPrestarHtaCodUnicoNo_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1617,7 +1617,7 @@
       "MetaDataIDKey": "",
       "Name": "btnAvisoPrestarHtaCodUnicoSi_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15940,7 +15940,7 @@
           "RuleProviderType": "User"
         }
       ],
-      "StyleName": "",
+      "StyleName": "defaultHtmlViewerStyle",
       "Type": "ControlInfo"
     },
     "lblCodigo_7": {
@@ -16941,7 +16941,8 @@
           "InvariantPropertyName": "PaddingRight",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "Size"
       ],
       "DynamicProperties": [
         {
@@ -17094,9 +17095,14 @@
           "Category": "Design",
           "PropertyName": "PaddingRight",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Size",
+          "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "",
+      "StyleName": "defaultHtmlViewerStyle",
       "Type": "ControlInfo"
     },
     "lblDescripcion_10": {

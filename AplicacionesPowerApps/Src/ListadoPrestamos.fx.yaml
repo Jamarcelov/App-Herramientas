@@ -133,6 +133,7 @@ ListadoPrestamos As screen:
                 ZIndex: =1
 
                 lblDatosCliente_2 As htmlViewer:
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
                     Font: =Font.Lato
                     HtmlText: |-
                         ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, cedula_cliente) & "</i>"

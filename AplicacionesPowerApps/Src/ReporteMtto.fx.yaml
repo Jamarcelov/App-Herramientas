@@ -125,6 +125,7 @@ ReporteMtto As screen:
                 ZIndex: =1
 
                 HtmlText1_1 As htmlViewer:
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
                     FillPortions: =1
                     Font: =Font.Lato
                     HtmlText: |-

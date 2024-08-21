@@ -19,6 +19,7 @@
         ZIndex: =1
 
     HtmlText1_2 As htmlViewer:
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
         Font: =Font.Lato
         Height: =1058
         HtmlText: |-

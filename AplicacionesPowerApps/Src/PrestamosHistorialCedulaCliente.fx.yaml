@@ -157,6 +157,7 @@ PrestamosHistorialCedulaCliente As screen:
                 ZIndex: =1
 
                 lblDatosCliente As htmlViewer:
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
                     Font: =Font.Lato
                     HtmlText: |+
                         ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, cedula_cliente) & "</i>"
@@ -171,6 +172,7 @@ PrestamosHistorialCedulaCliente As screen:
                 lblClienteSinHtasPrestadas As htmlViewer:
                     AlignInContainer: =AlignInContainer.Start
                     Color: =If(IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente)) && IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente)),RGBA(184, 0, 0, 1) ,RGBA(0, 150, 25, 1))  
+                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
                     Font: =Font.Lato
                     Height: =30
                     HtmlText: =If(IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente)) && IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente)),"<i><b>¡Cliente no registrado!</b></i>" ,"<i><b>¡Cliente sin herramientas prestadas!</b></i>")
