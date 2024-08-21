@@ -219,7 +219,7 @@ EjecMantenimientosHtasTecnico As screen:
                                     Usuario_htria_ppal,
                                     user_usuario = txtUsuario.Text,
                                     nombre_usuario
-                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO" || estado_mtto = "REPROGRAMADO")
+                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO")
                             ),
                             Filter(
                                 Mtto_hta,
@@ -230,14 +230,14 @@ EjecMantenimientosHtasTecnico As screen:
                                     Usuario_htria_ppal,
                                     user_usuario = txtUsuario.Text,
                                     nombre_usuario
-                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO" || estado_mtto = "REPROGRAMADO"))) Or (StartsWith(
+                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO"))) Or (StartsWith(
                                     codigo_hta,
                                     txtBuscaEjecMttoHtasTecnico.Text
                                 ) && (tecnico_mtto.Value = LookUp(
                                     Usuario_htria_ppal,
                                     user_usuario = txtUsuario.Text,
                                     nombre_usuario
-                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO" || estado_mtto = "REPROGRAMADO")))
+                                ) && (estado_mtto = "PENDIENTE" || estado_mtto = "REALIZADO")))
                             )
                         ),
                         "fecha_mtto",
