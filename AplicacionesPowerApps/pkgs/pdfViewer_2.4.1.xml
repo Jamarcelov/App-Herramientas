@@ -1,4 +1,4 @@
-<widget xmlns="http://openajax.org/metadata" spec="1.0" id="http://microsoft.com/appmagic/pdfViewer" name="pdfViewer" jsClass="AppMagic.Controls.WebViewPdfViewer" version="2.4.0" runtimeCost="1" xmlns:appMagic="http://schemas.microsoft.com/appMagic">
+<widget xmlns="http://openajax.org/metadata" spec="1.0" id="http://microsoft.com/appmagic/pdfViewer" name="pdfViewer" jsClass="AppMagic.Controls.WebViewPdfViewer" version="2.4.1" runtimeCost="1" xmlns:appMagic="http://schemas.microsoft.com/appMagic">
   <author name="Microsoft AppMagic" />
   <license type="text/html"><![CDATA[<p>TODO:  Need license text here.</p>]]></license>
   <description><![CDATA[PdfViewer
@@ -207,20 +207,20 @@
     <require type="other" src="webViewPdfViewer/viewer/web/images/gv-toolbarButton-download.svg" group="pdfViewer" />
     <require type="other" src="webViewPdfViewer/viewer/web/images/loading-icon.gif" group="pdfViewer" />
     <require type="other" src="webViewPdfViewer/viewer/web/images/loading.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-documentProperties.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-firstPage.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-handTool.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-lastPage.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-rotateCcw.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-rotateCw.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-scrollHorizontal.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-scrollPage.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-scrollVertical.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-scrollWrapped.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-selectTool.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-spreadEven.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-spreadNone.svg" group="pdfViewer" />
-    <require type="other" src="webViewPdfViewer/viewer/web/images/secondaryToolbarButton-spreadOdd.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-documentProperties.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-firstPage.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-handTool.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-lastPage.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-rotateCcw.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-rotateCw.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-scrollHorizontal.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-scrollPage.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-scrollVertical.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-scrollWrapped.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-selectTool.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-spreadEven.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-spreadNone.svg" group="pdfViewer" />
+    <require type="other" src="webViewPdfViewer/viewer/web/images/secTbBtn-spreadOdd.svg" group="pdfViewer" />
     <require type="other" src="webViewPdfViewer/viewer/web/images/toolbarButton-bookmark.svg" group="pdfViewer" />
     <require type="other" src="webViewPdfViewer/viewer/web/images/toolbarButton-currentOutlineItem.svg" group="pdfViewer" />
     <require type="other" src="webViewPdfViewer/viewer/web/images/toolbarButton-download.svg" group="pdfViewer" />
@@ -629,5 +629,8 @@
   </appMagic:conversion>
   <appMagic:conversion from="2.3.0" to="2.4.0">
     <!-- Updated control resources to match new PDFjs version, 4.3.136. -->
+  </appMagic:conversion>
+  <appMagic:conversion from="2.4.0" to="2.4.1">
+    <!-- Updated control - renamed SVG assets for secondaryToolbarButton. -->
   </appMagic:conversion>
 </widget>

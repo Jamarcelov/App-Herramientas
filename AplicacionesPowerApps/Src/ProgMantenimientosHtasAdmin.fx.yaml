@@ -1283,7 +1283,7 @@ ProgMantenimientosHtasAdmin As screen:
                     Fill: =RGBA(0, 0, 0, 0)
                     Height: =50
                     Required: =false
-                    Update: =Value(DataCardValue39.Text)
+                    Update: =Value(drpHHProg.SelectedText.Value) + (Value(drpMMProg.SelectedText.Value)/60)
                     Width: =341
                     X: =3
                     Y: =1
@@ -1304,28 +1304,53 @@ ProgMantenimientosHtasAdmin As screen:
                         Y: =10
                         ZIndex: =1
 
-                    DataCardValue39 As text:
-                        BorderColor: =Color.Black
+                    drpMMProg As dropdown:
+                        BorderColor: =RGBA(0, 0, 0, 1)
                         BorderThickness: =1
-                        Default: =Parent.Default
-                        DelayOutput: =true
-                        DisplayMode: =Parent.DisplayMode
+                        ChevronBackground: =RGBA(102, 102, 102, 1)
+                        ChevronHoverBackground: =Color.Black
+                        Default: =
                         Font: =Font.Lato
-                        Format: =TextFormat.Number
                         Height: =35
-                        HoverBorderColor: =RGBA(0, 0, 0, 1)
                         HoverFill: =RGBA(166, 166, 166, 1)
-                        PaddingLeft: =5
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
+                        Items: =["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+                        PressedFill: =RGBA(102, 102, 102, 1)
+                        SelectionFill: =RGBA(128, 128, 128, 1)
                         Size: =10
-                        Tooltip: =Parent.DisplayName
-                        Width: =Parent.Width - 60
+                        Width: =80
+                        X: =130
+                        Y: =40
+                        ZIndex: =3
+
+                    Label3 As label:
+                        Align: =Align.Center
+                        Font: =Font.Lato
+                        Height: =35
+                        Size: =10
+                        Text: |-
+                            =":"
+                        Width: =20
+                        X: =110
+                        Y: =40
+                        ZIndex: =4
+
+                    drpHHProg As dropdown:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(102, 102, 102, 1)
+                        ChevronHoverBackground: =Color.Black
+                        Default: =
+                        Font: =Font.Lato
+                        Height: =35
+                        HoverFill: =RGBA(166, 166, 166, 1)
+                        Items: =["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+                        PressedFill: =RGBA(102, 102, 102, 1)
+                        SelectionFill: =RGBA(128, 128, 128, 1)
+                        Size: =10
+                        Width: =80
                         X: =30
                         Y: =40
-                        ZIndex: =2
+                        ZIndex: =5
 
                 horas_hombre_DataCard1 As typedDataCard.numberEditCard:
                     BorderStyle: =BorderStyle.Solid
@@ -1483,7 +1508,7 @@ ProgMantenimientosHtasAdmin As screen:
                     HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
                     OnSelect: |-
                         =If(
-                            IsBlank(DataCardValue33.SelectedDate) || IsBlank(DataCardValue34.Text) || IsBlank(DataCardValue35.Text) || IsBlank(DataCardValue36.Text) ||  IsBlank(DataCardValue38.Text) || IsBlank(DataCardValue39.Text) || IsBlank(DataCardValue40.Text) || IsBlank(DataCardValue16.SelectedItems),
+                            IsBlank(DataCardValue33.SelectedDate) || IsBlank(DataCardValue34.Text) || IsBlank(DataCardValue35.Text) || IsBlank(DataCardValue36.Text) ||  IsBlank(DataCardValue38.Text) || IsBlank(DataCardValue40.Text) || IsBlank(DataCardValue16.SelectedItems),
                             Notify(
                                 "¡Existen campos obligatorios sin llenar, verifique por favor!",
                                 NotificationType.Error,
