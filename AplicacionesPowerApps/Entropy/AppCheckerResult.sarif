@@ -6434,19 +6434,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.DataCardValue39_1.AccessibleLabel"
+                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpMMReProg.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.DataCardValue39_1.AccessibleLabel",
+                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpMMReProg.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ProgMantenimientosHtasAdminSeg",
-                "type": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.DataCardValue39_1"
+                "type": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpMMReProg"
               }
             }
           ],
@@ -11277,6 +11277,36 @@
                 "member": "AccessibleLabel",
                 "module": "ProgMantenimientosHtasAdmin",
                 "type": "ProgMantenimientosHtasAdmin.ContainerProgramarMttoHta.Container1.formProgMttoHtasAdmin.duracion_actividad_DataCard1.drpMMProg"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpHHReProg.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpHHReProg.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "ProgMantenimientosHtasAdminSeg",
+                "type": "ProgMantenimientosHtasAdminSeg.ContainerReProgramarMttoHta.Container1_8.formReProgMttoHtasAdmin.duracion_actividad_DataCard1_1.drpHHReProg"
               }
             }
           ],
