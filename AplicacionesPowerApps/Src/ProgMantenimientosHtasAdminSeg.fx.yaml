@@ -231,7 +231,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                 LayoutMinWidth: =320
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =15
-                TemplateSize: =250
+                TemplateSize: =290
                 Width: =1361
                 WrapCount: =ProgMantenimientosHtasAdminSeg.Size
                 X: =5
@@ -255,7 +255,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     OnSelect: =Select(Parent)
                     Width: =307
                     X: =8
-                    Y: =240
+                    Y: =275
                     ZIndex: =2
 
                 programadoPorSegProgHtasAdmin As label:
@@ -273,7 +273,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =DescripSegProgHtasAdmin.Width
                     X: =126
-                    Y: =216
+                    Y: =246
                     ZIndex: =3
 
                 tituloProgramadoPorSegProgHtasAdmin As label:
@@ -292,7 +292,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =118
                     X: =15
-                    Y: =216
+                    Y: =246
                     ZIndex: =4
 
                 tecnicoSegProgHtasAdmin As label:
@@ -310,7 +310,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =DescripSegProgHtasAdmin.Width
                     X: =133
-                    Y: =196
+                    Y: =226
                     ZIndex: =5
 
                 tituloTecnicoSegProgHtasAdmin As label:
@@ -329,7 +329,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =118
                     X: =15
-                    Y: =196
+                    Y: =226
                     ZIndex: =6
 
                 estadoSegProgHtasAdmin As label:
@@ -349,7 +349,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =DescripSegProgHtasAdmin.Width
                     X: =120
-                    Y: =176
+                    Y: =206
                     ZIndex: =7
 
                 tituloEstadoSegProgHtasAdmin As label:
@@ -368,7 +368,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =105
                     X: =15
-                    Y: =176
+                    Y: =206
                     ZIndex: =8
 
                 tipoProgSegProgHtasAdmin As label:
@@ -386,7 +386,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =DescripSegProgHtasAdmin.Width
                     X: =109
-                    Y: =156
+                    Y: =184
                     ZIndex: =9
 
                 tituloTipoProgSegProgHtasAdmin As label:
@@ -405,7 +405,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     VerticalAlign: =VerticalAlign.Top
                     Width: =90
                     X: =15
-                    Y: =156
+                    Y: =184
                     ZIndex: =10
 
                 TipoMttoSegProgHtasAdmin As label:
@@ -720,6 +720,24 @@ ProgMantenimientosHtasAdminSeg As screen:
                     Y: =29
                     ZIndex: =28
 
+                TipoMttoSegProgHtasAdmin_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    Height: =20
+                    LineHeight: =1.7
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =9
+                    Text: =ThisItem.duracion_actividad
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =DescripSegProgHtasAdmin.Width
+                    X: =83
+                    Y: =159
+                    ZIndex: =31
+
                 Group7 As group:
                     Height: =5
                     Width: =5
@@ -754,6 +772,25 @@ ProgMantenimientosHtasAdminSeg As screen:
                         X: =256
                         Y: =60
                         ZIndex: =30
+
+                tituloTipoMttoSegProgHtasAdmin_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =20
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: |-
+                        ="Duración:"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =90
+                    X: =15
+                    Y: =159
+                    ZIndex: =32
 
             Container30_4 As groupContainer.horizontalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
