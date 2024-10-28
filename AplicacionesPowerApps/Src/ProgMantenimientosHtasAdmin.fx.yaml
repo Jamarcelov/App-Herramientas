@@ -1385,7 +1385,7 @@ ProgMantenimientosHtasAdmin As screen:
                     DataCardValue40 As text:
                         BorderColor: =Color.Black
                         BorderThickness: =1
-                        Default: =Parent.Default
+                        Default: =Value(DataCardValue38.Text) * (Value(drpHHProg.SelectedText.Value)+(Value(drpMMProg.SelectedText.Value)/60))
                         DelayOutput: =true
                         DisplayMode: =Parent.DisplayMode
                         Font: =Font.Lato
