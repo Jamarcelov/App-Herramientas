@@ -2287,7 +2287,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     DataCardValue40_1 As text:
                         BorderColor: =Color.Black
                         BorderThickness: =1
-                        Default: =galSegProgMantenimientosHtasAdmin.Selected.horas_hombre
+                        Default: =Value(DataCardValue38_1.Text) * (Value(drpHHReProg.SelectedText.Value)+(Value(drpMMReProg.SelectedText.Value)/60))
                         DelayOutput: =true
                         DisplayMode: =Parent.DisplayMode
                         Font: =Font.Lato
@@ -2413,7 +2413,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                     HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
                     OnSelect: |-
                         =If(
-                            IsBlank(DataCardValue33_1.SelectedDate) || IsBlank(DataCardValue34_1.Text) || IsBlank(DataCardValue38_1.Text) || IsBlank(DataCardValue40_1.Text) || IsBlank(DataCardValue16_1.SelectedItems),
+                            IsBlank(DataCardValue33_1.SelectedDate) || IsBlank(DataCardValue34_1.Text) || IsBlank(DataCardValue38_1.Text) || IsBlank(DataCardValue40_1.Text) || IsBlank(DataCardValue16_1.SelectedItems) || (drpHHReProg.SelectedText.Value = "00" && drpMMReProg.SelectedText.Value = "00"),
                             Notify(
                                 "¡Existen campos obligatorios sin llenar, verifique por favor!",
                                 NotificationType.Error,
