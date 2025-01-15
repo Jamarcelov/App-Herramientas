@@ -40,7 +40,7 @@
     "Name": "PowerApps_CoreControls_ButtonCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Botón",
-    "Version": "0.0.42"
+    "Version": "0.0.43"
   },
   "button": {
     "CustomGroupControlTemplateName": "",
@@ -265,7 +265,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "pdfViewer",
     "OverridableProperties": {},
-    "Version": "2.4.1"
+    "Version": "2.5.0"
   },
   "rectangle": {
     "CustomGroupControlTemplateName": "",
