@@ -279,7 +279,7 @@ CertificacionesCMSA As screen:
                     Size: =9
                     Text: =ThisItem.ubicacion_hta.Value
                     VerticalAlign: =VerticalAlign.Top
-                    Width: =192
+                    Width: =221
                     X: =86
                     Y: =170
                     ZIndex: =5
@@ -299,7 +299,7 @@ CertificacionesCMSA As screen:
                         ="Ubicación:"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =68
-                    X: =18
+                    X: =15
                     Y: =170
                     ZIndex: =6
 
@@ -336,7 +336,7 @@ CertificacionesCMSA As screen:
                         ="No. Precinto:"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =83
-                    X: =18
+                    X: =15
                     Y: =148
                     ZIndex: =8
 
@@ -373,7 +373,7 @@ CertificacionesCMSA As screen:
                         ="Fecha de inspección:"
                     VerticalAlign: =VerticalAlign.Top
                     Width: =130
-                    X: =18
+                    X: =15
                     Y: =128
                     ZIndex: =10
 
