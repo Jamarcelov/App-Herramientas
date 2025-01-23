@@ -653,7 +653,7 @@ CertificacionesCMSA As screen:
                     Height: =36
                     Icon: =Icon.Edit
                     OnSelect: =Set(avisoEditarHta, true)
-                    Visible: =If(ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                    Visible: =If(ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
                     Width: =35
                     X: =275
                     Y: =145
