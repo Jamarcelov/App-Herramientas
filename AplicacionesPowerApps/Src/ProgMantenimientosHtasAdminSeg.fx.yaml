@@ -166,10 +166,13 @@ ProgMantenimientosHtasAdminSeg As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =30
                     Italic: =true
+                    OnSelect: =
                     PaddingTop: =2
                     Size: =8
                     Text: |-
-                        ="Mttos aprobados:" & "  " & With({wFiltroTotalSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems, revision_mtto = "REALIZADO")}, CountRows(wFiltroTotalSegMtto))
+                        ="Mttos aprobados:" & "  " & With({wFiltroTotalSegMtto: Filter(Mtto_hta, revision_mtto = "REALIZADO")}, CountRows(wFiltroTotalSegMtto))
+                        
+                        //"Mttos aprobados:" & "  " & With({wFiltroTotalSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems; revision_mtto = "REALIZADO")}; CountRows(wFiltroTotalSegMtto))
                     Width: =120
                     X: =686
                     Y: =4
@@ -182,10 +185,13 @@ ProgMantenimientosHtasAdminSeg As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =30
                     Italic: =true
+                    OnSelect: =
                     PaddingTop: =2
                     Size: =8
                     Text: |-
-                        ="Mttos por revisar:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems, revision_mtto = "PENDIENTE")}, CountRows(wFiltroTotalHtasSegMtto))
+                        ="Mttos por revisar:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(Mtto_hta, revision_mtto = "PENDIENTE")}, CountRows(wFiltroTotalHtasSegMtto))
+                        
+                        //"Mttos por revisar:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems; revision_mtto = "PENDIENTE")}; CountRows(wFiltroTotalHtasSegMtto))
                     Width: =120
                     X: =686
                     Y: =4
@@ -198,10 +204,13 @@ ProgMantenimientosHtasAdminSeg As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =30
                     Italic: =true
+                    OnSelect: =
                     PaddingTop: =2
                     Size: =8
                     Text: |-
-                        ="Mttos pendientes:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems, estado_mtto = "PENDIENTE")}, CountRows(wFiltroTotalHtasSegMtto))
+                        ="Mttos pendientes:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(Mtto_hta, estado_mtto = "PENDIENTE")}, CountRows(wFiltroTotalHtasSegMtto))
+                        
+                        //"Mttos pendientes:" & "  " & With({wFiltroTotalHtasSegMtto: Filter(galSegProgMantenimientosHtasAdmin.AllItems; estado_mtto = "PENDIENTE")}; CountRows(wFiltroTotalHtasSegMtto))
                     Width: =120
                     X: =686
                     Y: =4
@@ -216,16 +225,24 @@ ProgMantenimientosHtasAdminSeg As screen:
                 DelayItemLoading: =true
                 Height: =415
                 Items: |-
-                    =SortByColumns( If(
-                        IsBlank(txtBuscarHtaCertCMSA_2.Text),
+                    =SortByColumns(
+                        If(
+                            IsBlank(txtBuscarHtaCertCMSA_2.Text),
                             Mtto_hta,
-                        Filter(
-                            Mtto_hta,
-                            StartsWith(descripcion_hta, txtBuscarHtaCertCMSA_2.Text)
-                            Or 
-                            StartsWith(codigo_hta, txtBuscarHtaCertCMSA_2.Text)
-                        )
-                    ), "fecha_mtto", SortOrder.Descending)
+                            Filter(
+                                Mtto_hta,
+                                StartsWith(
+                                    descripcion_hta,
+                                    txtBuscarHtaCertCMSA_2.Text
+                                ) Or StartsWith(
+                                    codigo_hta,
+                                    txtBuscarHtaCertCMSA_2.Text
+                                )
+                            )
+                        ),
+                        "fecha_mtto",
+                        SortOrder.Descending
+                    )
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320
@@ -724,14 +741,16 @@ ProgMantenimientosHtasAdminSeg As screen:
                     BorderColor: =RGBA(0, 0, 0, 1)
                     Font: =Font.Lato
                     Height: =20
-                    LineHeight: =1.7
+                    LineHeight: =1.3
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
                     PaddingLeft: =0
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =9
-                    Text: =ThisItem.duracion_actividad
+                    Text: |-
+                        =//ThisItem.duracion_actividad
+                        Text(ThisItem.duracion_actividad, "[$-es-ES]0,0")
                     VerticalAlign: =VerticalAlign.Top
                     Width: =DescripSegProgHtasAdmin.Width
                     X: =83
