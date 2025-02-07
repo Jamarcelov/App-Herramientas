@@ -225,7 +225,25 @@ ProgMantenimientosHtasAdminSeg As screen:
                 DelayItemLoading: =true
                 Height: =415
                 Items: |-
-                    =SortByColumns(
+                    =/*SortByColumns(
+                        If(
+                            IsBlank(txtBuscarHtaCertCMSA_2.Text);
+                            Mtto_hta;
+                            Filter(
+                                Mtto_hta;
+                                StartsWith(
+                                    descripcion_hta;
+                                    txtBuscarHtaCertCMSA_2.Text
+                                ) Or StartsWith(
+                                    codigo_hta;
+                                    txtBuscarHtaCertCMSA_2.Text
+                                )
+                            )
+                        );
+                        "fecha_mtto";
+                        SortOrder.Descending
+                    )*/
+                    Sort(
                         If(
                             IsBlank(txtBuscarHtaCertCMSA_2.Text),
                             Mtto_hta,
@@ -240,7 +258,7 @@ ProgMantenimientosHtasAdminSeg As screen:
                                 )
                             )
                         ),
-                        "fecha_mtto",
+                        fecha_mtto,
                         SortOrder.Descending
                     )
                 Layout: =Layout.Vertical
