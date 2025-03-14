@@ -1,0 +1,3087 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  CertificacionesCMSA:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - ContainerCertificacionesCMSA:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - headerCertificacionesCMSA:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - iconUbicacionHtasCertCMSA:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =30
+                        Icon: =Icon.Waypoint
+                        PaddingLeft: =10
+                        Visible: =CertificacionesCMSA.Size <> 1
+                        Width: =30
+                        X: =113
+                        Y: =1
+                  - txUbicacionHtasCertCMSA:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =8
+                        Text: |-
+                          ="Herramientas - CMSA
+                          "
+                        Visible: =CertificacionesCMSA.Size <> 1
+                        Width: =160
+                        X: =30
+                        Y: =70
+                  - tituloCertCMSA:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =12
+                        Text: ="CERTIFICACIONES - CMSA"
+                        Width: =666
+                        X: =350
+                        Y: =35
+                  - iconUsuarioCertCMSA:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(77, 77, 77, 1)
+                        Height: =30
+                        Icon: =Icon.Person
+                        Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Width: =80
+                        X: =777
+                        Y: =36
+                  - txtUsuarioCertCMSA:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =10
+                        Text: |-
+                          ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Visible: =CertificacionesCMSA.Size <> 1
+                        Width: =169
+                        X: =807
+                        Y: =36
+            - bodyCertificacionesCMSA:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - Container29:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =70
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutWrap: =true
+                        PaddingTop: =15
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - IconBuscarHtaCertCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =40
+                              Icon: =Icon.Search
+                              PaddingRight: =5
+                              Width: =40
+                              X: =441
+                              Y: =133
+                        - txtBuscarHtaCertCMSA:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              BorderThickness: =1
+                              Default: =""
+                              Font: =Font.Lato
+                              HintText: ="Buscar por descripción, código o número de precinto"
+                              HoverBorderColor: =RGBA(102, 102, 102, 1)
+                              HoverFill: =RGBA(237, 237, 237, 1)
+                              Italic: =true
+                              Size: =10
+                              Width: =300
+                              X: =49
+                              Y: =133
+                        - txUbicacionHtasCertCMSA_1:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =35
+                              Italic: =true
+                              Size: =10
+                              Text: |-
+                                ="Total de Htas:" & "  " & If(IsBlank(With({wFiltroTotalHtas: Hta_Cmsa}, Sum(wFiltroTotalHtas, cantidad_hta))), 0, With({wFiltroTotalHtas: Hta_Cmsa}, Sum(wFiltroTotalHtas, cantidad_hta)))
+                                //"Total de Htas:" & "  " & With({wFiltroTotalHtas: Hta_Cmsa}; Sum(wFiltroTotalHtas; cantidad_hta))
+                              Visible: =false
+                              X: =686
+                              Y: =4
+                  - galHtasCertCMSA:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Dashed
+                        BorderThickness: =1
+                        Height: =388
+                        Items: |-
+                          =SortByColumns( If(
+                              IsBlank(txtBuscarHtaCertCMSA.Text),
+                              Hta_Cmsa,
+                              Filter(
+                                  Hta_Cmsa,
+                                  StartsWith(
+                                      descripcion_hta,
+                                      txtBuscarHtaCertCMSA.Text
+                                  ) Or StartsWith(
+                                      codigo_hta,
+                                      txtBuscarHtaCertCMSA.Text
+                                  ) Or no_precinto_hta = txtBuscarHtaCertCMSA.Text
+                              ) 
+                          ), "fecha_inspeccion_hta",SortOrder.Descending)
+                        TemplatePadding: =15
+                        TemplateSize: =230
+                        Width: =1361
+                        WrapCount: =CertificacionesCMSA.Size
+                        X: =5
+                        Y: =3
+                      Children:
+                        - Rectangle6:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              BorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(166, 166, 166, 1)
+                              OnSelect: =Select(Parent)
+                              Width: =1
+                              X: =8
+                              Y: =49
+                        - Rectangle5:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              BorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(166, 166, 166, 1)
+                              Height: =1
+                              OnSelect: =Select(Parent)
+                              Width: =307
+                              X: =8
+                              Y: =225
+                        - estadoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =Switch(ThisItem.estado_hta.Value,"BUENA",RGBA(0,176,80,1),"POR REVISAR MTTO", RGBA(0,176,240,1),"MTTO PENDIENTE",RGBA(233,113,50,1),"MTTO",RGBA(192,0,0,1),"DE BAJA",RGBA(116,116,116,1))
+                              Font: =Font.Lato
+                              Height: =20
+                              Italic: =true
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.estado_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =70
+                              Y: =203
+                        - tituloEstadoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Estado:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =55
+                              X: =15
+                              Y: =203
+                        - ubicacionHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =30
+                              LineHeight: =1.3
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.ubicacion_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =221
+                              X: =86
+                              Y: =170
+                        - tituloUbicacionHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =30
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Ubicación:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =68
+                              X: =15
+                              Y: =170
+                        - noPrecintoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.no_precinto_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =101
+                              Y: =148
+                        - tituloNoPrecintoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="No. Precinto:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =83
+                              X: =15
+                              Y: =148
+                        - fechaInspHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =Text(ThisItem.fecha_inspeccion_hta, "dd/mm/yyyy")
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =148
+                              Y: =128
+                        - tituloFechaInspHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Fecha de inspección:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =130
+                              X: =15
+                              Y: =128
+                        - cantidadHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =20
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.cantidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =83
+                              Y: =86
+                        - tituloCantidadHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Cantidad:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =83
+                              X: =15
+                              Y: =86
+                        - codigoHta:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.codigo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =70
+                              Y: =66
+                        - tituloCodigoHta:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Código:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =55
+                              X: =15
+                              Y: =66
+                        - capacidadHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.capacidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoHtaCertCMSA.Width
+                              X: =89
+                              Y: =46
+                        - tituloCapacidadHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Capacidad:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =68
+                              X: =15
+                              Y: =46
+                        - descripcionHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.descripcion_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =194
+                              X: =98
+                              Y: =26
+                        - tituloDescripcionHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =22
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Descripción:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =83
+                              X: =15
+                              Y: =27
+                        - tipoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =20
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.tipo_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =130
+                              X: =145
+                              Y: =7
+                        - tituloTipoHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Tipo de herramienta:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =130
+                              X: =15
+                              Y: =7
+                        - iconEliminarHtaCertCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =45
+                              Icon: =Icon.Trash
+                              OnSelect: =Set(avisoEliminarHta, true)
+                              Visible: =If(ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO" || ThisItem.contador_cantidad_hta = "0", false, true)
+                              Width: =45
+                              X: =265
+                              Y: =116
+                        - iconEditarHtaCertCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =45
+                              Icon: =Icon.Edit
+                              OnSelect: =Set(avisoEditarHta, true)
+                              Visible: =If(ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO" || ThisItem.contador_cantidad_hta = "0", false, true)
+                              Width: =45
+                              X: =265
+                              Y: =38
+                        - msjBloqueadaHtaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(128, 128, 128, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =24
+                              Italic: =true
+                              Size: =7
+                              Text: ="Bloqueada"
+                              Visible: =If(ThisItem.contador_cantidad_hta = "0" || ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                              Width: =60
+                              X: =262
+                              Y: =98
+                        - IconBloqueadaHtaCertCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(128, 128, 128, 1)
+                              DisplayMode: =DisplayMode.View
+                              Height: =30
+                              Icon: =Icon.Lock
+                              Visible: =If(ThisItem.contador_cantidad_hta = "0" || ThisItem.estado_hta.Value = "MTTO PENDIENTE" || ThisItem.estado_hta.Value = "POR REVISAR MTTO" || ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                              Width: =30
+                              X: =277
+                              Y: =70
+                        - tituloEstadoHtaCertCMSA_2:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Cantidad prestada:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =115
+                              X: =15
+                              Y: =105
+                        - estadoHtaCertCMSA_2:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =If(ThisItem.cantidad_hta_variable = 0 || IsBlank(ThisItem.cantidad_hta_variable),RGBA(0, 134, 208, 1) , RGBA(184, 0, 0, 1))
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =20
+                              Italic: =true
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =If(ThisItem.cantidad_hta_variable = 0 || IsBlank(ThisItem.cantidad_hta_variable), "0", ThisItem.cantidad_hta_variable * -1)
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =42
+                              X: =135
+                              Y: =105
+                        - iconEditarHtaCertCMSA_3:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =36
+                              Icon: =Icon.Edit
+                              OnSelect: =Set(avisoEditarHta, true)
+                              Visible: =If(ThisItem.estado_hta.Value = "DE BAJA" || ThisItem.estado_hta.Value = "MTTO", true, false)
+                              Width: =35
+                              X: =275
+                              Y: =145
+                  - Container30:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =90
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        PaddingTop: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Container32:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =100
+                            Children:
+                              - lblCrearHtaCertCMSA:
+                                  Control: Label@2.5.1
+                                  Group: Group15
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Crear Hta"
+                                    Width: =100
+                                    Y: =60
+                              - iconCrearHtaCertCMSA:
+                                  Control: Classic/Icon@2.5.0
+                                  Group: Group15
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =50
+                                    Icon: =Icon.Add
+                                    OnSelect: |-
+                                      =NewForm(formCrearHtaCMSA_1); Set(avisoCrearHta, true)
+                                      //NewForm(formCrearHtaCMSA);; Navigate(CertificacionesCrearHtaCMSA; ScreenTransition.Cover)
+                                    Width: =50
+                                    X: =25
+                                    Y: =10
+                        - Container35:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutMinHeight: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =100
+                            Children:
+                              - lblActualizarCertCMSA:
+                                  Control: Label@2.5.1
+                                  Group: Group16
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Actualizar"
+                                    Width: =100
+                                    Y: =60
+                              - iconActualizarCertCMSA:
+                                  Control: Classic/Icon@2.5.0
+                                  Group: Group16
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =50
+                                    Icon: =Icon.Reload
+                                    OnSelect: =Refresh(Hta_Cmsa)
+                                    Width: =50
+                                    X: =25
+                                    Y: =10
+            - footerCertificacionesCMSA:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - lineaPie_18:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Width: =Parent.Width - 50
+                        X: =33
+                        Y: =696
+                  - Container28:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =75
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - txtPiePaginaCertCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              FillPortions: =1
+                              Font: =Font.Lato
+                              Italic: =true
+                              Size: =12
+                              Text: '="Herramentería CMSA - " & Text(Today(), "yyyy") '
+                              Width: =238
+                              X: =564
+                              Y: =715
+                        - iconAtrasCertCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =55
+                              Icon: =Icon.BackArrow
+                              OnSelect: =Back(); Reset(txtBuscarHtaCertCMSA)
+                              PaddingRight: =10
+                              Width: =55
+                              X: =25
+                              Y: =10
+      - ContainerEliminarHtaCMSA:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoEliminarHta
+            Width: =Parent.Width
+          Children:
+            - Container15:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =420
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
+                  Width: =450
+                Children:
+                  - Container22:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =70
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - iconAdvertenciaAvisoEliminarCMSA:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =DisplayMode.View
+                              Height: =40
+                              Icon: =Icon.Warning
+                              Visible: =avisoEliminarHta
+                              Width: =40
+                              X: =158
+                              Y: =66
+                        - tituloAvisoEliminarCMSA:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              Size: =12
+                              Text: ="ELIMINAR HERRAMIENTA"
+                              Visible: =avisoEliminarHta
+                              Width: =250
+                              X: =356
+                              Y: =14
+                  - lineaAvisoEliminarCMSA:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Visible: =avisoEliminarHta
+                        Width: =Parent.Width - 50
+                        X: =233
+                        Y: =133
+                  - lblPreguntaAvisoEliminarCMSA:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(184, 0, 0, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Italic: =true
+                        Size: =10
+                        Text: ="¿Está seguro(a) de eliminar esta herramienta?"
+                        Visible: =avisoEliminarHta
+                        Width: =369
+                        X: =266
+                        Y: =44
+                  - galAvisoEliminarHtaCMSA:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        FillPortions: =0
+                        Height: =240
+                        Items: =galHtasCertCMSA.Selected
+                        TemplateSize: =212
+                        Visible: =avisoEliminarHta
+                        Width: =Parent.Width
+                        X: =505
+                        Y: =247
+                      Children:
+                        - estadoHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.estado_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =187
+                        - precintoHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.no_precinto_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =156
+                        - fechInspHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =Text(ThisItem.fecha_inspeccion_hta, "dd/mm/yyyy")
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =125
+                        - capacidadHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.capacidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =95
+                        - descripcionHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.descripcion_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =64
+                        - codigoHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.codigo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =33
+                        - tipoHtaAvisoEliminar:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.tipo_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =3
+                        - lblEstado:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="ESTADO:"
+                              Width: =170
+                              X: =95
+                              Y: =187
+                        - lblPrecinto:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="NO. PRECINTO:"
+                              Width: =170
+                              X: =95
+                              Y: =156
+                        - lblfechaInsp:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="FECHA INSPECCIÓN:"
+                              Width: =170
+                              X: =95
+                              Y: =125
+                        - lblCapacidad:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CAPACIDAD:"
+                              Width: =170
+                              X: =95
+                              Y: =95
+                        - lblDescripcion:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="DESCRIPCIÓN:"
+                              Width: =170
+                              X: =95
+                              Y: =64
+                        - lblCodigo:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CÓDIGO:"
+                              Width: =170
+                              X: =95
+                              Y: =33
+                        - lblTipo:
+                            Control: Label@2.5.1
+                            Group: Group13
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="TIPO DE HERRAMIENTA:"
+                              Width: =170
+                              X: =95
+                              Y: =3
+                  - Container20:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =30
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =350
+                      Children:
+                        - btnAvisoEliminarSiCMSA:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =46
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =Remove(Hta_Cmsa, galHtasCertCMSA.Selected); Set(avisoEliminarHta, false); Notify("¡Herramienta eliminada con éxito!", NotificationType.Success, 2500)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="SI"
+                              Visible: =avisoEliminarHta
+                              Width: =130
+                              X: =289
+                              Y: =507
+                        - btnAvisoEliminarNoCMSA:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =46
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =Set(avisoEliminarHta, false)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="NO"
+                              Visible: =avisoEliminarHta
+                              Width: =130
+                              X: =225
+                              Y: =507
+      - ContainerEditarHtaCMSA:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoEditarHta
+            Width: =Parent.Width
+          Children:
+            - Container46_3:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Visible: =avisoEditarHta
+            - Container1_5:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =Parent.Height - 160
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Visible: =avisoEditarHta
+                  Width: =Parent.Width
+                  Y: =22
+                Children:
+                  - subtituloEjecMttoHtasTecnico_4:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =12
+                        Text: ="EDITAR HERRAMIENTA"
+                        Visible: =avisoEditarHta
+                        Width: =600
+                        X: =383
+                        Y: =126
+                  - formEditarHtaCMSA_2:
+                      Control: Form@2.4.2
+                      Variant: Classic
+                      Layout: Vertical
+                      Properties:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Dashed
+                        BorderThickness: =1
+                        DataSource: =Hta_Cmsa
+                        Height: =480
+                        Item: =galHtasCertCMSA.Selected
+                        OnSuccess: =
+                        Visible: =avisoEditarHta
+                      Children:
+                        - nombre_usuario_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="nombre_usuario"
+                              Default: =ThisItem.nombre_usuario
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,nombre_usuario)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, nombre_usuario)
+                              Required: =false
+                              Update: =DataCardValue1_3.Text
+                              Width: =341
+                              X: =3
+                              Y: =3
+                            Children:
+                              - DataCardKey1_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="USUARIO (TÉCNICO):"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue1_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =0
+                                    Default: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                                    DelayOutput: =true
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                    HoverFill: =RGBA(186, 202, 226, 1)
+                                    Italic: =true
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - tipo_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="tipo_hta"
+                              Default: =ThisItem.tipo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,tipo_hta)
+                              Height: =83
+                              Required: =false
+                              Update: =DataCardValue2_3.Selected
+                              Width: =341
+                              Y: =0
+                            Children:
+                              - DataCardKey2_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* TIPO DE HERRAMIENTA:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue2_3:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].tipo_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - codigo_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="codigo_hta"
+                              Default: =ThisItem.codigo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,codigo_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, codigo_hta)
+                              Required: =false
+                              Update: =DataCardValue3_3.Text
+                              Width: =341
+                              X: =1
+                              Y: =0
+                            Children:
+                              - DataCardKey3_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* CÓDIGO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue3_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - descripcion_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="descripcion_hta"
+                              Default: =ThisItem.descripcion_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,descripcion_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, descripcion_hta)
+                              Required: =false
+                              Update: =DataCardValue4_3.Text
+                              Width: =341
+                              X: =2
+                              Y: =0
+                            Children:
+                              - DataCardKey4_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* DESCRIPCIÓN:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue4_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - capacidad_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="capacidad_hta"
+                              Default: =ThisItem.capacidad_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,capacidad_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, capacidad_hta)
+                              Required: =false
+                              Update: =DataCardValue5_3.Text
+                              Width: =341
+                              X: =3
+                              Y: =0
+                            Children:
+                              - DataCardKey5_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="CAPACIDAD:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue5_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - marca_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="marca_hta"
+                              Default: =ThisItem.marca_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,marca_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, marca_hta)
+                              Required: =false
+                              Update: =DataCardValue6_3.Text
+                              Width: =341
+                              Y: =1
+                            Children:
+                              - DataCardKey6_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="MARCA:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue6_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - modelo_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="modelo_hta"
+                              Default: =ThisItem.modelo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,modelo_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, modelo_hta)
+                              Required: =false
+                              Update: =DataCardValue7_3.Text
+                              Width: =341
+                              X: =1
+                              Y: =1
+                            Children:
+                              - DataCardKey7_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="MODELO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue7_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - no_serie_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="no_serie_hta"
+                              Default: =ThisItem.no_serie_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,no_serie_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, no_serie_hta)
+                              Required: =false
+                              Update: =DataCardValue8_3.Text
+                              Width: =341
+                              X: =2
+                              Y: =1
+                            Children:
+                              - DataCardKey8_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="NO. DE SERIE:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue8_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - cantidad_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicNumberEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="cantidad_hta"
+                              Default: =ThisItem.cantidad_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,cantidad_hta)
+                              Height: =83
+                              Required: =false
+                              Update: =Value(DataCardValue9_3.Text)
+                              Width: =341
+                              X: =3
+                              Y: =1
+                            Children:
+                              - DataCardKey9_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* CANTIDAD:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue9_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Format: =TextFormat.Number
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - no_precinto_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="no_precinto_hta"
+                              Default: =ThisItem.no_precinto_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,no_precinto_hta)
+                              MaxLength: =
+                              Required: =false
+                              Update: =DataCardValue12_3.Text
+                              Width: =341
+                              X: =2
+                              Y: =2
+                            Children:
+                              - DataCardKey12_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* NO. PRECINTO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue12_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Format: =TextFormat.Number
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - ubicacion_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="ubicacion_hta"
+                              Default: =ThisItem.ubicacion_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,ubicacion_hta)
+                              Required: =false
+                              Update: =DataCardValue13_3.Selected
+                              Width: =341
+                              X: =3
+                              Y: =2
+                            Children:
+                              - DataCardKey13_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* UBICACIÓN:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue13_3:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].ubicacion_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - estado_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="estado_hta"
+                              Default: =ThisItem.estado_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,estado_hta)
+                              Required: =false
+                              Update: =DataCardValue14_3.Selected
+                              Width: =341
+                              Y: =3
+                            Children:
+                              - DataCardKey14_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* ESTADO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue14_3:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].estado_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - codigo_compartido_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="codigo_compartido_hta"
+                              Default: =ThisItem.codigo_compartido_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,codigo_compartido_hta)
+                              Required: =false
+                              Update: =DataCardValue17_3.Selected
+                              Width: =341
+                              X: =1
+                              Y: =3
+                            Children:
+                              - DataCardKey17_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* COMPARTE CÓDIGO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue17_3:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].codigo_compartido_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(0, 18, 107, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - observaciones_hta_DataCard1_3:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="observaciones_hta"
+                              Default: =ThisItem.observaciones_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,observaciones_hta)
+                              Height: =133
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, observaciones_hta)
+                              Required: =false
+                              Update: =DataCardValue15_3.Text
+                              Width: =341
+                              X: =2
+                              Y: =3
+                            Children:
+                              - DataCardKey15_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="OBSERVACIONES:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue15_3:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =87
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    Mode: =TextMode.MultiLine
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                  - lblMsjCampoObligatorio_13:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.End
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Italic: =true
+                        Size: =10
+                        Text: ="(*) Campos oligatorios"
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =avisoEditarHta
+                        Width: =168
+                        X: =1043
+                        Y: =606
+                  - Container2_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoEditarHta
+                        Width: =350
+                      Children:
+                        - btnCancelarEjecMttoHtasTecnico_4:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.'Open Sans'
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =ResetForm(formEditarHtaCMSA_2); Set(avisoEditarHta, false)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =13
+                              Text: ="CANCELAR"
+                              Visible: =avisoEditarHta
+                              Width: =138
+                              X: =202
+                              Y: =5
+                        - btnGuardarCrearHtaCMSA_5:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.'Open Sans'
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: |-
+                                =If(
+                                    IsEmpty(DataCardValue2_3.SelectedItems) || IsBlank(DataCardValue3_3.Text) || IsBlank(DataCardValue4_3.Text) || IsBlank(DataCardValue9_3.Text) || IsBlank(DataCardValue11_3.SelectedDate) || IsBlank(DataCardValue12_3.Text) || IsBlank(DataCardValue13_3.Selected.Value) || IsBlank(DataCardValue14_3.Selected.Value) || IsBlank(DataCardValue17_3.Selected.Value),
+                                    Notify(
+                                        "¡Existen campos obligatorios sin llenar, verifique por favor!",
+                                        NotificationType.Error,
+                                        2500
+                                    ),
+                                    SubmitForm(formEditarHtaCMSA_2);
+                                    Set(avisoEditarHta, false);
+                                    Notify(
+                                        "¡Herramienta editada con éxito!",
+                                        NotificationType.Success,
+                                        2500
+                                    )
+                                )
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Text: ="GUARDAR"
+                              Visible: =avisoEditarHta
+                              Width: =138
+                              X: =10
+                              Y: =5
+      - ContainerCrearHtaCMSA:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoCrearHta
+            Width: =Parent.Width
+          Children:
+            - Container46_2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Visible: =avisoCrearHta
+            - Container1_4:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =Parent.Height - 160
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Visible: =avisoCrearHta
+                  Width: =Parent.Width
+                  Y: =22
+                Children:
+                  - subtituloEjecMttoHtasTecnico_3:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =12
+                        Text: ="CREAR HERRAMIENTA"
+                        Visible: =avisoCrearHta
+                        Width: =600
+                        X: =383
+                        Y: =126
+                  - formCrearHtaCMSA_1:
+                      Control: Form@2.4.2
+                      Variant: Classic
+                      Layout: Vertical
+                      Properties:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Dashed
+                        BorderThickness: =1
+                        DataSource: =Hta_Cmsa
+                        Height: =480
+                        Item: =galHtasCertCMSA.Selected
+                        OnSuccess: =
+                        Visible: =avisoCrearHta
+                      Children:
+                        - nombre_usuario_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="nombre_usuario"
+                              Default: =ThisItem.nombre_usuario
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,nombre_usuario)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, nombre_usuario)
+                              Required: =false
+                              Update: =DataCardValue1_2.Text
+                              Width: =341
+                              X: =3
+                              Y: =3
+                            Children:
+                              - DataCardKey1_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="USUARIO (TÉCNICO):"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue1_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =0
+                                    Default: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                                    DelayOutput: =true
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                    HoverFill: =RGBA(186, 202, 226, 1)
+                                    Italic: =true
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - tipo_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="tipo_hta"
+                              Default: =ThisItem.tipo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,tipo_hta)
+                              Height: =83
+                              Required: =false
+                              Update: =DataCardValue2_2.Selected
+                              Width: =341
+                              Y: =0
+                            Children:
+                              - DataCardKey2_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* TIPO DE HERRAMIENTA:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue2_2:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].tipo_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - codigo_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="codigo_hta"
+                              Default: =ThisItem.codigo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,codigo_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, codigo_hta)
+                              Required: =false
+                              Update: =DataCardValue3_2.Text
+                              Width: =341
+                              X: =1
+                              Y: =0
+                            Children:
+                              - DataCardKey3_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* CÓDIGO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue3_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - descripcion_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="descripcion_hta"
+                              Default: =ThisItem.descripcion_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,descripcion_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, descripcion_hta)
+                              Required: =false
+                              Update: =DataCardValue4_2.Text
+                              Width: =341
+                              X: =2
+                              Y: =0
+                            Children:
+                              - DataCardKey4_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* DESCRIPCIÓN:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue4_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - capacidad_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="capacidad_hta"
+                              Default: =ThisItem.capacidad_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,capacidad_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, capacidad_hta)
+                              Required: =false
+                              Update: =DataCardValue5_2.Text
+                              Width: =341
+                              X: =3
+                              Y: =0
+                            Children:
+                              - DataCardKey5_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="CAPACIDAD:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue5_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - marca_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="marca_hta"
+                              Default: =ThisItem.marca_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,marca_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, marca_hta)
+                              Required: =false
+                              Update: =DataCardValue6_2.Text
+                              Width: =341
+                              Y: =1
+                            Children:
+                              - DataCardKey6_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="MARCA:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue6_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - modelo_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="modelo_hta"
+                              Default: =ThisItem.modelo_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,modelo_hta)
+                              Height: =83
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, modelo_hta)
+                              Required: =false
+                              Update: =DataCardValue7_2.Text
+                              Width: =341
+                              X: =1
+                              Y: =1
+                            Children:
+                              - DataCardKey7_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="MODELO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue7_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - no_serie_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="no_serie_hta"
+                              Default: =ThisItem.no_serie_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,no_serie_hta)
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, no_serie_hta)
+                              Required: =false
+                              Update: =DataCardValue8_2.Text
+                              Width: =341
+                              X: =2
+                              Y: =1
+                            Children:
+                              - DataCardKey8_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="NO. DE SERIE:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue8_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - cantidad_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicNumberEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="cantidad_hta"
+                              Default: =ThisItem.cantidad_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,cantidad_hta)
+                              Height: =83
+                              Required: =false
+                              Update: =Value(DataCardValue9_2.Text)
+                              Width: =341
+                              X: =3
+                              Y: =1
+                            Children:
+                              - DataCardKey9_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* CANTIDAD:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue9_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Format: =TextFormat.Number
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - no_precinto_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="no_precinto_hta"
+                              Default: =ThisItem.no_precinto_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,no_precinto_hta)
+                              MaxLength: =
+                              Required: =false
+                              Update: =DataCardValue12_2.Text
+                              Width: =341
+                              X: =2
+                              Y: =2
+                            Children:
+                              - DataCardKey12_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* NO. PRECINTO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue12_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Format: =TextFormat.Number
+                                    Height: =35
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - ubicacion_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="ubicacion_hta"
+                              Default: =ThisItem.ubicacion_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,ubicacion_hta)
+                              Required: =false
+                              Update: =DataCardValue13_2.Selected
+                              Width: =341
+                              X: =3
+                              Y: =2
+                            Children:
+                              - DataCardKey13_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* UBICACIÓN:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue13_2:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].ubicacion_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - estado_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="estado_hta"
+                              Default: =ThisItem.estado_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,estado_hta)
+                              Required: =false
+                              Update: =DataCardValue14_2.Selected
+                              Width: =341
+                              Y: =3
+                            Children:
+                              - DataCardKey14_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* ESTADO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue14_2:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].estado_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(102, 102, 102, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - codigo_compartido_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="codigo_compartido_hta"
+                              Default: =ThisItem.codigo_compartido_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,codigo_compartido_hta)
+                              Required: =false
+                              Update: =DataCardValue17_2.Selected
+                              Width: =341
+                              X: =1
+                              Y: =3
+                            Children:
+                              - DataCardKey17_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="* COMPARTE CÓDIGO:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue17_2:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    ChevronBackground: =RGBA(102, 102, 102, 1)
+                                    ChevronFill: =RGBA(255, 255, 255, 1)
+                                    ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+                                    ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                    DefaultSelectedItems: =Parent.Default
+                                    DisplayFields: =["Value"]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =35
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    Items: =Choices([@Hta_Cmsa].codigo_compartido_hta)
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(0, 18, 107, 1)
+                                    SearchFields: =["Value"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =RGBA(128, 128, 128, 1)
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                        - observaciones_hta_DataCard1_2:
+                            Control: TypedDataCard@1.0.6
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="observaciones_hta"
+                              Default: =ThisItem.observaciones_hta
+                              DisplayName: =DataSourceInfo([@Hta_Cmsa],DataSourceInfo.DisplayName,observaciones_hta)
+                              Height: =133
+                              MaxLength: =DataSourceInfo([@Hta_Cmsa], DataSourceInfo.MaxLength, observaciones_hta)
+                              Required: =false
+                              Update: =DataCardValue15_2.Text
+                              Width: =341
+                              X: =2
+                              Y: =3
+                            Children:
+                              - DataCardKey15_2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =10
+                                    Text: ="OBSERVACIONES:"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue15_2:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    BorderColor: =Color.Black
+                                    BorderThickness: =1
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.Lato
+                                    Height: =87
+                                    HoverBorderColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(166, 166, 166, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    Mode: =TextMode.MultiLine
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =10
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =40
+                  - lblMsjCampoObligatorio_12:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.End
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Italic: =true
+                        Size: =10
+                        Text: ="(*) Campos oligatorios"
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =avisoCrearHta
+                        Width: =168
+                        X: =1043
+                        Y: =606
+                  - Container2_4:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoCrearHta
+                        Width: =350
+                      Children:
+                        - btnCancelarEjecMttoHtasTecnico_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.'Open Sans'
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =ResetForm(formCrearHtaCMSA_1); Set(avisoCrearHta, false)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =13
+                              Text: ="CANCELAR"
+                              Visible: =avisoCrearHta
+                              Width: =138
+                              X: =202
+                              Y: =5
+                        - btnGuardarCrearHtaCMSA_4:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.'Open Sans'
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: |-
+                                =If(
+                                    IsBlank(DataCardValue2_2.Selected.Value) || IsBlank(DataCardValue3_2.Text) || IsBlank(DataCardValue4_2.Text) || IsBlank(DataCardValue9_2.Text) || IsBlank(DataCardValue11_2.SelectedDate) || IsBlank(DataCardValue12_2.Text) || IsBlank(DataCardValue13_2.Selected.Value) || IsBlank(DataCardValue14_2.Selected.Value) || IsBlank(DataCardValue17_2.Selected.Value),
+                                    Notify(
+                                        "¡Existen campos obligatorios sin llenar, verifique por favor!",
+                                        NotificationType.Error,
+                                        2500
+                                    ),
+                                    SubmitForm(formCrearHtaCMSA_1);
+                                    Set(avisoCrearHta, false);
+                                    Notify(
+                                        "¡Herramienta creada con exito!",
+                                        NotificationType.Success,
+                                        2500
+                                    )
+                                )
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Text: ="GUARDAR"
+                              Visible: =avisoCrearHta
+                              Width: =138
+                              X: =10
+                              Y: =5

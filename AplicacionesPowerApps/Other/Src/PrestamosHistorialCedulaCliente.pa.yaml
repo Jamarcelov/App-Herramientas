@@ -1,0 +1,1628 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  PrestamosHistorialCedulaCliente:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |
+        =/*ClearCollect(
+            colRegistrosObtenidos;
+            ForAll(
+                Table(ParseJSON(ObtenerHistorialPrestamosHtas.Run().registros));
+                {
+                    fecha_prestamo_hta: DateTimeValue(Value.fecha_prestamo_hta);
+                    tipo_hta: Text(Value.tipo_hta.Value);
+                    codigo_hta: Text(Value.codigo_hta);
+                    descripcion_hta: Text(Value.descripcion_hta);
+                    capacidad_hta: Text(Value.capacidad_hta);
+                    marca_hta: Text(Value.marca_hta);
+                    codigo_compartido_hta: Text(Value.codigo_compartido_hta.Value);
+                    cantidad_hta: Value(Value.cantidad_hta_prestada);
+                    cantidad_hta_variable: Value(Value.cantidad_hta_variable);
+                    contador_cantidad_hta: Text(Value.contador_cantidad_hta);
+                    estado_prestamo_hta: Text(Value.estado_prestamo_hta.Value);
+                    ubicacion_prestamo_hta: Text(Value.ubicacion_hta.Value);
+                    turno_prestamo_hta: Text(Value.turno_prestamo_hta.Value);
+                    ubicacion_hta: Text(Value.ubicacion_hta0.Value);
+                    cedula_cliente: Text(Value.cedula_cliente);
+                    nombre_cliente: Text(Value.nombre_cliente);
+                    nombre_usuario: Text(Value.nombre_usuario)
+                }
+            )
+        )*/
+    Children:
+      - Container12_3:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - header_16:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - iconUbicacionHtasCertCMSA_1:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =30
+                        Icon: =Icon.Waypoint
+                        PaddingLeft: =10
+                        Visible: =PrestamosHistorialCedulaCliente.Size <> 1
+                        Width: =30
+                        X: =83
+                        Y: =1
+                  - txUbicacionHtasCertCMSA_2:
+                      Control: Label@2.5.1
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =9
+                        Text: =If(varUbicacion <> "MINA","Htría Ppal - Planta", "Htría Ppal - Mina")
+                        Visible: =PrestamosHistorialCedulaCliente.Size <> 1
+                        Width: =160
+                        X: =30
+                        Y: =69
+                  - tituloPrestamosCrearEditarHta_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =12
+                        Text: ="PRÉSTAMOS"
+                        Width: =666
+                        X: =350
+                        Y: =35
+                  - iconUsuarioPrestamosCrearEditarHta_1:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(77, 77, 77, 1)
+                        Height: =30
+                        Icon: =Icon.Person
+                        LayoutMinHeight: =80
+                        Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Width: =80
+                        X: =777
+                        Y: =36
+                  - txtUsuarioPrestamosCrearEditarHta_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =10
+                        Text: |-
+                          ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Visible: =PrestamosHistorialCedulaCliente.Size <> 1
+                        Width: =169
+                        X: =807
+                        Y: =36
+            - body_16:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - Container29_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =110
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =80
+                        LayoutWrap: =true
+                        PaddingTop: =3
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - lblDatosCliente:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                              Font: =Font.Lato
+                              HtmlText: |+
+                                ="<i><b>Cliente:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, nombre_cliente) & "<br>" & "<b>Cédula:</b> " & LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = varCedulaCliente, cedula_cliente) & "</i>"
+
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Width: =320
+                        - lblClienteSinHtasPrestadas:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: '=If(IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente)) && IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente)),RGBA(184, 0, 0, 1) ,RGBA(0, 150, 25, 1))  '
+                              DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                              Font: =Font.Lato
+                              Height: =30
+                              HtmlText: =If(IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), nombre_cliente)) && IsBlank(LookUp(Cliente_cmsa_htria_ppal, cedula_cliente = Value(txtCedulaCliente.Text), cedula_cliente)),"<i><b>¡Cliente no registrado!</b></i>" ,"<i><b>¡Cliente sin herramientas prestadas!</b></i>")
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =14
+                              Visible: =If(IsEmpty(galPrestamosHtaCMSA.AllItems), true, false)
+                              Width: =320
+                        - txtBuscarPrestamosHistorialCedulaCliente:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              BorderThickness: =1
+                              Default: =""
+                              Font: =Font.Lato
+                              Height: =35
+                              HintText: ="Buscar por descripción o código"
+                              HoverBorderColor: =RGBA(0, 0, 0, 1)
+                              HoverFill: =RGBA(166, 166, 166, 1)
+                              Italic: =true
+                              Size: =12
+                              Width: =270
+                  - galPrestamosHtaCMSA:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Dashed
+                        BorderThickness: =1
+                        Height: =388
+                        Items: |
+                          =If(
+                              IsBlank(txtBuscarPrestamosHistorialCedulaCliente.Text),
+                              SortByColumns(
+                                  SortByColumns(
+                                      If(
+                                          !IsBlank(varCedulaCliente),
+                                          Filter(
+                                              Prestamo_Hta,
+                                              ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && cedula_cliente = varCedulaCliente
+                                          )
+                                      ),
+                                      "fecha_prestamo_hta",
+                                      SortOrder.Descending
+                                  ),
+                                  "contador_cantidad_hta",
+                                  SortOrder.Descending
+                              ),
+                              SortByColumns(
+                                  SortByColumns(
+                                      If(
+                                          !IsBlank(varCedulaCliente),
+                                          Filter(
+                                              Prestamo_Hta,
+                                              ubicacion_prestamo_hta.Value = varUbicacion && estado_prestamo_hta.Value = "Prestada" && cedula_cliente = Value(varCedulaCliente) && (StartsWith(codigo_hta,txtBuscarPrestamosHistorialCedulaCliente.Text) || StartsWith(descripcion_hta, txtBuscarPrestamosHistorialCedulaCliente.Text))
+                                          )
+                                      ),
+                                      "fecha_prestamo_hta",
+                                      SortOrder.Descending
+                                  ),
+                                  "contador_cantidad_hta",
+                                  SortOrder.Descending
+                              )
+                          )
+                        TemplatePadding: =15
+                        TemplateSize: =230
+                        Width: =1361
+                        WrapCount: =CertificacionesCMSA.Size
+                        X: =5
+                        Y: =3
+                      Children:
+                        - Rectangle6_5:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              BorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(166, 166, 166, 1)
+                              Height: =130
+                              OnSelect: =Select(Parent)
+                              Width: =1
+                              X: =8
+                              Y: =30
+                        - Rectangle5_5:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              BorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(166, 166, 166, 1)
+                              Height: =1
+                              OnSelect: =Select(Parent)
+                              Width: =307
+                              X: =8
+                              Y: =225
+                        - prestadoPorHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =29
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: |
+                                =ThisItem.nombre_usuario
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =209
+                              X: =101
+                              Y: =172
+                        - tituloPrestadoPorHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Prestado por:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =87
+                              X: =15
+                              Y: =172
+                        - estadoHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(184, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =20
+                              Italic: =true
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.estado_prestamo_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoFechaPrestamo.Width
+                              X: =71
+                              Y: =152
+                        - tituloEstadoPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Estado:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =57
+                              X: =15
+                              Y: =152
+                        - cantidadHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: |
+                                =Round(Value(ThisItem.contador_cantidad_hta, "en-US"), 0)
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoFechaPrestamo.Width
+                              X: =81
+                              Y: =132
+                        - tituloCantidadHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Cantidad:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =75
+                              X: =15
+                              Y: =132
+                        - capacidadHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.capacidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoFechaPrestamo.Width
+                              X: =90
+                              Y: =92
+                        - tituloCapacidadHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Capacidad:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =75
+                              X: =15
+                              Y: =92
+                        - descripcionHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =39
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.descripcion_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =169
+                              X: =102
+                              Y: =53
+                        - tituloDescripcionHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Descripción:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =87
+                              X: =15
+                              Y: =53
+                        - codigoHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.codigo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =tipoFechaPrestamo.Width
+                              X: =72
+                              Y: =114
+                        - tituloCodigoHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Código:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =57
+                              X: =15
+                              Y: =112
+                        - tipoHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.tipo_hta.Value
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =145
+                              Y: =29
+                        - tituloTipoHtaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Tipo de herramienta:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =130
+                              X: =15
+                              Y: =29
+                        - tipoFechaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =Text(ThisItem.fecha_prestamo_hta, "dd/mm/yyyy")
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =145
+                              Y: =9
+                        - tituloFechaPrestamo:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =20
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: ="Fecha de préstamo:"
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =130
+                              X: =15
+                              Y: =9
+                        - iconEliminarHtaCertCMSA_2:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(54, 176, 75, 1)
+                              DisplayMode: =If(!IsEmpty(Filter(listadoHtasDevolver, codigo_hta_dev = ThisItem.codigo_hta && fecha_prestamo_hta_dev = ThisItem.fecha_prestamo_hta)) || ThisItem.contador_cantidad_hta = "0", DisplayMode.Disabled, DisplayMode.Edit)
+                              Height: =45
+                              Icon: =Icon.Download
+                              OnSelect: =If(ThisItem.codigo_compartido_hta.Value = "NO", Set(avisoDevolverHtaCodigoUnico, true), Set(avisoDevolverHtaCodigoCompartido, true))
+                              Tooltip: ="Devolver herramienta"
+                              Width: =45
+                              X: =265
+                              Y: =73
+                  - Container30_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =90
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        PaddingTop: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Container35_7:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutMinHeight: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =100
+                            Children:
+                              - lblPrestarHta:
+                                  Control: Label@2.5.1
+                                  Group: Group16_5
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Prestar Hta"
+                                    Width: =100
+                                    Y: =60
+                              - iconPrestarHta:
+                                  Control: Classic/Icon@2.5.0
+                                  Group: Group16_5
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =50
+                                    Icon: =Icon.Add
+                                    OnSelect: =Navigate(PrestamosHistorialPrestarHta, ScreenTransition.Cover)
+                                    Width: =50
+                                    X: =25
+                                    Y: =10
+                        - Container32_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =150
+                            Children:
+                              - lblCrearHtaCertCMSA_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Listado de devoluciones"
+                                    Y: =60
+                              - iconCrearHtaCertCMSA_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =50
+                                    Icon: =Icon.ShoppingCart
+                                    OnSelect: =Navigate(ListadoDevoluciones, ScreenTransition.Cover)
+                                    Width: =50
+                                    X: =50
+                                    Y: =10
+                              - Circle1_1:
+                                  Control: Circle@2.3.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Fill: =RGBA(184, 0, 0, 1)
+                                    Height: =23
+                                    Visible: =If(IsEmpty(listadoHtasDevolver), false, true)
+                                    Width: =23
+                                    X: =100
+                                    Y: =2
+                              - Label4_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Font: =Font.Lato
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =20
+                                    Size: =8
+                                    Text: =If(IsEmpty(listadoHtasDevolver), 0, Sum(listadoHtasDevolver, cantidad_hta_dev))
+                                    Visible: =If(IsEmpty(listadoHtasDevolver), false, true)
+                                    Width: =25
+                                    X: =98
+                                    Y: =3
+                        - Container35_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutMinHeight: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =100
+                            Children:
+                              - lblActualizarCertCMSA_1:
+                                  Control: Label@2.5.1
+                                  Group: Group16_2
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DisplayMode: =DisplayMode.Disabled
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Descargar PDF"
+                                    Width: =100
+                                    Y: =60
+                              - iconActualizarCertCMSA_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Group: Group16_2
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisplayMode: =DisplayMode.Disabled
+                                    Height: =50
+                                    Icon: =Icon.DocumentPDF
+                                    OnSelect: =Navigate(HtmlPdf, ScreenTransition.Cover)
+                                    Width: =50
+                                    X: =25
+                                    Y: =10
+            - footer_16:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - lineaPie_29:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Width: =Parent.Width - 50
+                        X: =33
+                        Y: =671
+                  - Container23_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =75
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - txtPiePaginaPrestamosCrearEditarHta_1:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              FillPortions: =1
+                              Font: =Font.Lato
+                              Height: =75
+                              Italic: =true
+                              PaddingTop: =10
+                              Size: =12
+                              Text: '="Herramentería CMSA - " & Text(Today(), "yyyy") '
+                              Width: =238
+                              X: =531
+                              Y: =34
+                        - iconAtrasPrestamosCrearEditarHta_1:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =55
+                              Icon: =Icon.BackArrow
+                              OnSelect: =Navigate(PrestamosBuscarCedulaClienteCodigoHta, ScreenTransition.CoverRight); Reset(txtCedulaCliente); Reset(txtCodigoHta); Reset(txtBuscarPrestamosHistorialCedulaCliente); Clear(listadoHtasPrestar); Clear(listadoHtasDevolver); Set(varCedulaCliente, Blank())
+                              PaddingRight: =10
+                              Width: =55
+                              X: =1242
+                              Y: =580
+      - Container14_7:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoDevolverHtaCodigoUnico
+            Width: =Parent.Width
+          Children:
+            - Container15_7:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Center
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =420
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
+                  Visible: =avisoDevolverHtaCodigoUnico
+                  Width: =450
+                Children:
+                  - Container22_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =70
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoDevolverHtaCodigoUnico
+                        Width: =Parent.Width
+                      Children:
+                        - iconAdvertenciaAvisoPrestarHtaCodUnico_3:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =DisplayMode.View
+                              Height: =40
+                              Icon: =Icon.Warning
+                              Visible: =avisoDevolverHtaCodigoUnico
+                              Width: =40
+                              X: =158
+                              Y: =66
+                        - tituloAvisoPrestarHtaCodUnico_3:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              Size: =10
+                              Text: ="AGREGAR A LISTADO DE  DEVOLUCIONES"
+                              Visible: =avisoDevolverHtaCodigoUnico
+                              Width: =280
+                              X: =356
+                              Y: =14
+                  - lineaAvisoPrestarHtaCodUnico_3:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Visible: =avisoDevolverHtaCodigoUnico
+                        Width: =Parent.Width - 50
+                        X: =233
+                        Y: =133
+                  - lblPreguntaAvisoPrestarHtaCodUnico_3:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(184, 0, 0, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Italic: =true
+                        Size: =10
+                        Text: ="¿Está seguro(a) de agregar esta herramienta al listado de devoluciones?"
+                        Visible: =avisoDevolverHtaCodigoUnico
+                        Width: =369
+                        X: =266
+                        Y: =44
+                  - galAvisoPrestarHtaCodUnico_3:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        FillPortions: =0
+                        Height: =240
+                        Items: =galPrestamosHtaCMSA.Selected
+                        TemplateSize: =212
+                        Visible: =avisoDevolverHtaCodigoUnico
+                        Width: =Parent.Width
+                        X: =505
+                        Y: =247
+                      Children:
+                        - estadoHtaAvisoEliminar_6:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.cantidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =141
+                        - capacidadHtaAvisoEliminar_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.capacidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =82
+                        - descripcionHtaAvisoEliminar_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.descripcion_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =51
+                        - codigoHtaAvisoEliminar_7:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.codigo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =112
+                        - tipoHtaAvisoEliminar_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =23
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.fecha_prestamo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =21
+                        - lblCantidadHtaPrestarCodUnico_6:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CANTIDAD:"
+                              Width: =170
+                              X: =95
+                              Y: =141
+                        - lblCapacidad_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CAPACIDAD:"
+                              Width: =170
+                              X: =95
+                              Y: =82
+                        - lblDescripcion_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="DESCRIPCIÓN:"
+                              Width: =170
+                              X: =95
+                              Y: =51
+                        - lblCodigo_7:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CÓDIGO:"
+                              Width: =170
+                              X: =95
+                              Y: =112
+                        - lblTipo_9:
+                            Control: Label@2.5.1
+                            Group: Group13_4
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =23
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="FECHA DE PRÉSTAMO:"
+                              Width: =170
+                              X: =95
+                              Y: =21
+                  - Container20_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =30
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoDevolverHtaCodigoUnico
+                        Width: =350
+                      Children:
+                        - btnAvisoPrestarHtaCodUnicoSi_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =44
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: |-
+                                =Collect(
+                                    listadoHtasDevolver,
+                                    {
+                                        fecha_prestamo_hta_dev: galPrestamosHtaCMSA.Selected.fecha_prestamo_hta,
+                                        tipo_hta_dev: galPrestamosHtaCMSA.Selected.tipo_hta.Value,
+                                        codigo_hta_dev: galPrestamosHtaCMSA.Selected.codigo_hta,
+                                        descripcion_hta_dev: galPrestamosHtaCMSA.Selected.descripcion_hta,
+                                        capacidad_hta_dev: If(IsBlank(galPrestamosHtaCMSA.Selected.capacidad_hta),"",galPrestamosHtaCMSA.Selected.capacidad_hta),
+                                        marca_hta_dev: If(IsBlank(galPrestamosHtaCMSA.Selected.marca_hta),"",galPrestamosHtaCMSA.Selected.marca_hta),
+                                        codigo_compartido_hta_dev: galPrestamosHtaCMSA.Selected.codigo_compartido_hta.Value,
+                                        cantidad_hta_dev: If(
+                                            galPrestamosHtaCMSA.Selected.codigo_compartido_hta.Value = "NO",
+                                            galPrestamosHtaCMSA.Selected.cantidad_hta
+                                        ),
+                                        estado_prestamo_hta_dev: "Devuelta",
+                                        ubicacion_prestamo_hta_dev: varUbicacion,
+                                        ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value, 
+                                        turno_prestamo_hta_dev: varTurno,
+                                        cedula_cliente_dev: LookUp(
+                                            Cliente_cmsa_htria_ppal,
+                                            cedula_cliente = varCedulaCliente,
+                                            cedula_cliente
+                                        ),
+                                        nombre_cliente_dev: LookUp(
+                                            Cliente_cmsa_htria_ppal,
+                                            cedula_cliente = varCedulaCliente,
+                                            nombre_cliente
+                                        ),
+                                        nombre_usuario_dev: LookUp(
+                                            Usuario_htria_ppal,
+                                            user_usuario = txtUsuario.Text,
+                                            nombre_usuario
+                                        )
+                                    }
+                                );
+                                Set(
+                                    avisoDevolverHtaCodigoUnico,
+                                    false
+                                );
+                                Notify(
+                                    "¡Herramienta agregada con éxito!",
+                                    NotificationType.Success,
+                                    1500
+                                )
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="SI"
+                              Visible: =avisoDevolverHtaCodigoUnico
+                              Width: =130
+                              X: =289
+                              Y: =6
+                        - btnAvisoPrestarHtaCodUnicoNo_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =46
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =Set(avisoDevolverHtaCodigoUnico, false)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="NO"
+                              Visible: =avisoDevolverHtaCodigoUnico
+                              Width: =130
+                              X: =225
+                              Y: =507
+      - Container14_8:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =avisoDevolverHtaCodigoCompartido
+            Width: =Parent.Width
+          Children:
+            - Container15_8:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Center
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =420
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
+                  Visible: =avisoDevolverHtaCodigoCompartido
+                  Width: =450
+                Children:
+                  - Container22_8:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =70
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoDevolverHtaCodigoCompartido
+                        Width: =Parent.Width
+                      Children:
+                        - iconAdvertenciaAvisoPrestarHtaCodigoCompartido_3:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =DisplayMode.View
+                              Height: =40
+                              Icon: =Icon.Warning
+                              Visible: =avisoDevolverHtaCodigoCompartido
+                              Width: =40
+                              X: =158
+                              Y: =66
+                        - tituloAvisoPrestarHtaCodigoCompartido_3:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              Size: =10
+                              Text: ="AGREGAR A LISTADO DE DEVOLUCIONES"
+                              Visible: =avisoDevolverHtaCodigoCompartido
+                              Width: =280
+                              X: =356
+                              Y: =14
+                  - lineaAvisoPrestarHtaCodigoCompartido_3:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Visible: =avisoDevolverHtaCodigoCompartido
+                        Width: =Parent.Width - 50
+                        X: =233
+                        Y: =133
+                  - lblPreguntaAvisoPrestarHtaCodigoCompartido_3:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(184, 0, 0, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Italic: =true
+                        Size: =10
+                        Text: ="¿Está seguro(a) de agregar esta herramienta al listado de devoluciones?"
+                        Visible: =avisoDevolverHtaCodigoCompartido
+                        Width: =369
+                        X: =266
+                        Y: =44
+                  - galAvisoPrestarHtaCodigoCompartido_3:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        FillPortions: =0
+                        Height: =240
+                        Items: =galPrestamosHtaCMSA.Selected
+                        TemplateSize: =212
+                        Visible: =avisoDevolverHtaCodigoCompartido
+                        Width: =Parent.Width
+                        X: =505
+                        Y: =247
+                      Children:
+                        - txtCantidadAvisoDevolverCodCompartido:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              BorderThickness: =1
+                              Default: =""
+                              Font: =Font.Lato
+                              HoverBorderColor: =RGBA(0, 0, 0, 1)
+                              HoverFill: =RGBA(166, 166, 166, 1)
+                              Size: =12
+                              Width: =64
+                              X: =265
+                              Y: =137
+                        - capacidadHtaAvisoEliminar_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =24
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.capacidad_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =82
+                        - descripcionHtaAvisoEliminar_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =24
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.descripcion_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =50
+                        - codigoHtaAvisoEliminar_8:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =24
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.codigo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =113
+                        - tipoHtaAvisoEliminar_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Font: =Font.Lato
+                              Height: =24
+                              LineHeight: =1.5
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =10
+                              Text: =ThisItem.fecha_prestamo_hta
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =170
+                              X: =267
+                              Y: =17
+                        - lblCantidadHtaPrestarCodUnico_7:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =24
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CANTIDAD:"
+                              Width: =170
+                              X: =95
+                              Y: =150
+                        - lblCapacidad_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =24
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CAPACIDAD:"
+                              Width: =170
+                              X: =95
+                              Y: =82
+                        - lblDescripcion_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =24
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="DESCRIPCIÓN:"
+                              Width: =170
+                              X: =95
+                              Y: =50
+                        - lblCodigo_8:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =24
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="CÓDIGO:"
+                              Width: =170
+                              X: =95
+                              Y: =113
+                        - lblTipo_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Bold
+                              Height: =24
+                              OnSelect: =Select(Parent)
+                              Size: =10
+                              Text: ="FECHA DE PRÉSTAMO:"
+                              Width: =170
+                              X: =95
+                              Y: =17
+                  - Container20_8:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =30
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =avisoDevolverHtaCodigoCompartido
+                        Width: =350
+                      Children:
+                        - btnAvisoPrestarHtaCodigoCompartidoSi_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =46
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: |-
+                                =If(
+                                    Value(txtCantidadAvisoDevolverCodCompartido.Text) > Round(
+                                        Value(
+                                            galPrestamosHtaCMSA.Selected.contador_cantidad_hta,
+                                            "en-US"
+                                        ),
+                                        0
+                                    ) || Value(txtCantidadAvisoDevolverCodCompartido.Text) = 0 || IsBlank(txtCantidadAvisoDevolverCodCompartido.Text),
+                                    Notify(
+                                        "¡La cantidad ingresada supera la cantidad de herramientas que están prestadas o es igual a 0 o el campo cantidad está sin llenar!",
+                                        NotificationType.Error,
+                                        3000
+                                    ),
+                                    Collect(
+                                        listadoHtasDevolver,
+                                        {
+                                            fecha_prestamo_hta_dev: galPrestamosHtaCMSA.Selected.fecha_prestamo_hta,
+                                            tipo_hta_dev: galPrestamosHtaCMSA.Selected.tipo_hta.Value,
+                                            codigo_hta_dev: galPrestamosHtaCMSA.Selected.codigo_hta,
+                                            descripcion_hta_dev: galPrestamosHtaCMSA.Selected.descripcion_hta,
+                                            capacidad_hta_dev: If(IsBlank(galPrestamosHtaCMSA.Selected.capacidad_hta),"",galPrestamosHtaCMSA.Selected.capacidad_hta),
+                                            marca_hta_dev: If(IsBlank(galPrestamosHtaCMSA.Selected.marca_hta),"",galPrestamosHtaCMSA.Selected.marca_hta),
+                                            codigo_compartido_hta_dev: galPrestamosHtaCMSA.Selected.codigo_compartido_hta.Value,
+                                            cantidad_hta_dev: If(
+                                                galPrestamosHtaCMSA.Selected.codigo_compartido_hta.Value = "NO",
+                                                galPrestamosHtaCMSA.Selected.cantidad_hta,
+                                                Value(txtCantidadAvisoDevolverCodCompartido.Text)
+                                            ),
+                                            estado_prestamo_hta_dev: "Devuelta",
+                                            ubicacion_prestamo_hta_dev: varUbicacion,
+                                            ubicacion_hta_dev: galPrestamosHtaCMSA.Selected.ubicacion_prestamo_hta.Value,
+                                            turno_prestamo_hta_dev: varTurno,
+                                            cedula_cliente_dev: LookUp(
+                                                Cliente_cmsa_htria_ppal,
+                                                cedula_cliente = varCedulaCliente,
+                                                cedula_cliente
+                                            ),
+                                            nombre_cliente_dev: LookUp(
+                                                Cliente_cmsa_htria_ppal,
+                                                cedula_cliente = varCedulaCliente,
+                                                nombre_cliente
+                                            ),
+                                            nombre_usuario_dev: LookUp(
+                                                Usuario_htria_ppal,
+                                                user_usuario = txtUsuario.Text,
+                                                nombre_usuario
+                                            )
+                                        }
+                                    );
+                                    Set(
+                                        avisoDevolverHtaCodigoCompartido,
+                                        false
+                                    );
+                                    Notify(
+                                        "¡Herramienta agregada con éxito!",
+                                        NotificationType.Success,
+                                        1500
+                                    )
+                                )
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="SI"
+                              Visible: =avisoDevolverHtaCodigoCompartido
+                              Width: =130
+                              X: =289
+                              Y: =507
+                        - btnAvisoPrestarHtaCodigoCompartidoNo_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                              Fill: =RGBA(102, 102, 102, 1)
+                              Font: =Font.Lato
+                              Height: =46
+                              HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
+                              OnSelect: =Set(avisoDevolverHtaCodigoCompartido, false)
+                              PressedBorderColor: =Self.Fill
+                              PressedColor: =Self.Fill
+                              PressedFill: =Self.Color
+                              RadiusBottomLeft: =4
+                              RadiusBottomRight: =4
+                              RadiusTopLeft: =4
+                              RadiusTopRight: =4
+                              Size: =14
+                              Text: ="NO"
+                              Visible: =avisoDevolverHtaCodigoCompartido
+                              Width: =130
+                              X: =225
+                              Y: =507

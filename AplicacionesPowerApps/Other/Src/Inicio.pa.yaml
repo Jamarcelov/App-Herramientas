@@ -1,0 +1,296 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Inicio:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - ContainerInicio:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - headerInicio:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - tituloInicio:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =10
+                        Text: ="PRÉSTAMOS, MANTENIMIENTOS Y CERTIFICACIONES DE HERRAMIENTAS"
+                        Width: =666
+                        X: =350
+                        Y: =35
+                  - iconUsuarioInicio:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(77, 77, 77, 1)
+                        Height: =30
+                        Icon: =Icon.Person
+                        Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Width: =80
+                        X: =777
+                        Y: =36
+                  - txtUsuarioInicio:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =10
+                        Text: |-
+                          ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Visible: =Inicio.Size <> 1
+                        Width: =169
+                        X: =807
+                        Y: =36
+            - bodyInicio:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  LayoutWrap: =true
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - Container16:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =150
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =200
+                      Children:
+                        - lblPrestamos:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =30
+                              OnSelect: =Navigate(Prestamos, ScreenTransition.Cover)
+                              Size: =10
+                              Text: ="PRÉSTAMOS"
+                              VerticalAlign: =VerticalAlign.Bottom
+                              X: =25
+                              Y: =107
+                        - imgPrestamos:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =107
+                              Image: =iconPrestamos
+                              OnSelect: =Navigate(Prestamos, ScreenTransition.Cover)
+                              Width: =130
+                              X: =35
+                              Y: =11
+                  - Container17:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =150
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =200
+                      Children:
+                        - lblCertificaciones:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =30
+                              OnSelect: =Navigate(Certificaciones, ScreenTransition.Cover)
+                              Size: =10
+                              Text: |-
+                                ="CERTIFICACIONES
+                                "
+                              VerticalAlign: =VerticalAlign.Bottom
+                              Width: =177
+                              X: =12
+                              Y: =108
+                        - imgCertificaciones:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =110
+                              Image: =iconCertificaciones
+                              OnSelect: =Navigate(Certificaciones, ScreenTransition.Cover)
+                              Width: =110
+                              X: =45
+                              Y: =10
+                  - Container18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =150
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =200
+                      Children:
+                        - lblMttos:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Font: =Font.Lato
+                              FontWeight: =FontWeight.Semibold
+                              Height: =30
+                              OnSelect: |-
+                                =/*If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Administrador";
+                                Navigate(MantenimientosAdmin; ScreenTransition.Cover); If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Técnico"; Navigate(MantenimientosTecnico; ScreenTransition.Cover); Notify("¡No tiene permisos para entrar a esta sección!"; NotificationType.Error; 2500)))*/
+
+                                // Genera el código para verificar el rol del usuario ingresado en `txtUsuario`. Si el rol es "Administrador", navega a la pantalla de `MantenimientosAdmin`. Si el rol es "Técnico", navega a la pantalla de `MantenimientosTecnico`. Si el rol no coincide con ninguno de estos, muestra una notificación de error.
+                                If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Administrador", Navigate(MantenimientosAdmin), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Técnico", Navigate(MantenimientosTecnico), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error)))
+                              Size: =10
+                              Text: |-
+                                ="MANTENIMIENTOS
+                                "
+                              VerticalAlign: =VerticalAlign.Bottom
+                              Width: =194
+                              X: =3
+                              Y: =110
+                        - imgMttos:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =105
+                              Image: =iconMttos
+                              OnSelect: |-
+                                =/*If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Administrador";
+                                Navigate(MantenimientosAdmin; ScreenTransition.Cover); If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Técnico"; Navigate(MantenimientosTecnico; ScreenTransition.Cover); Notify("¡No tiene permisos para entrar a esta sección!"; NotificationType.Error; 2500)))*/
+
+                                // Genera el código para verificar el rol del usuario ingresado en `txtUsuario`. Si el rol es "Administrador", navega a la pantalla de `MantenimientosAdmin`. Si el rol es "Técnico", navega a la pantalla de `MantenimientosTecnico`. Si el rol no coincide con ninguno de estos, muestra una notificación de error.
+                                If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Administrador", Navigate(MantenimientosAdmin), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Técnico", Navigate(MantenimientosTecnico), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error)))
+                              Width: =105
+                              X: =47
+                              Y: =16
+            - footerInicio:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - lineaPie_16:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Width: =Parent.Width - 50
+                        X: =33
+                        Y: =671
+                  - Container11:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =75
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - txtPiePaginaInicio:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              FillPortions: =1
+                              Font: =Font.Lato
+                              Height: =75
+                              Italic: =true
+                              PaddingTop: =10
+                              Size: =12
+                              Text: '="Herramentería CMSA - " & Text(Today(), "yyyy") '
+                              Width: =238
+                              X: =531
+                              Y: =34
+                        - iconCerrarSesion:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =55
+                              Icon: =Icon.Leave
+                              OnSelect: =Exit()
+                              PaddingRight: =10
+                              Width: =55

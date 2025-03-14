@@ -2,12 +2,12 @@
   "FormatVersion": "0.24",
   "Header": {
     "AnalysisOptions": {
-      "DataflowAnalysisEnabled": false,
-      "DataflowAnalysisFlagStateToggledByUser": false
+      "DataflowAnalysisEnabled": true,
+      "DataflowAnalysisFlagStateToggledByUser": true
     },
     "DocVersion": "1.345",
     "MinVersionToLoad": "1.331",
-    "MSAppStructureVersion": "2.0"
+    "MSAppStructureVersion": "2.4.0"
   },
   "Properties": {
     "AppCreationSource": "AppFromScratch",
@@ -22,10 +22,10 @@
       "blockmovingcontrol": true,
       "cdsdataformatting": false,
       "classiccontrols": false,
-      "commentgeneratedformulasv2": false,
+      "commentgeneratedformulasv2": true,
       "consistentreturnschemafortabularfunctions": true,
       "copyandmerge": true,
-      "dataflowanalysisenabled": false,
+      "dataflowanalysisenabled": true,
       "datatablev2control": true,
       "dataverseactionsenabled": true,
       "delaycontrolrendering": true,
@@ -49,6 +49,7 @@
       "enableeditinmcs": false,
       "enableexcelonlinebusinessv2connector": true,
       "enableideaspanel": true,
+      "enableideaspanelbyexample": false,
       "enablelegacybarcodescanner": false,
       "enablelegacydatatable": false,
       "enableonstart": true,
@@ -63,7 +64,7 @@
       "exportimportcomponents2": true,
       "externalmessage": false,
       "fluentv9controls": false,
-      "fluentv9controlspreview": false,
+      "fluentv9controlspreview": true,
       "formuladataprefetch": true,
       "formularepair": false,
       "generatedebugpublishedapp": false,

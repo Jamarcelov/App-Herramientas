@@ -180,8 +180,11 @@ Inicio As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =30
                     OnSelect: |-
-                        =If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Administrador",
-                        Navigate(MantenimientosAdmin, ScreenTransition.Cover), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Técnico", Navigate(MantenimientosTecnico, ScreenTransition.Cover), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error, 2500)))
+                        =/*If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Administrador";
+                        Navigate(MantenimientosAdmin; ScreenTransition.Cover); If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Técnico"; Navigate(MantenimientosTecnico; ScreenTransition.Cover); Notify("¡No tiene permisos para entrar a esta sección!"; NotificationType.Error; 2500)))*/
+                        
+                        // Genera el código para verificar el rol del usuario ingresado en `txtUsuario`. Si el rol es "Administrador", navega a la pantalla de `MantenimientosAdmin`. Si el rol es "Técnico", navega a la pantalla de `MantenimientosTecnico`. Si el rol no coincide con ninguno de estos, muestra una notificación de error.
+                        If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Administrador", Navigate(MantenimientosAdmin), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Técnico", Navigate(MantenimientosTecnico), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error)))
                     Size: =10
                     Text: |-
                         ="MANTENIMIENTOS
@@ -196,8 +199,11 @@ Inicio As screen:
                     Height: =105
                     Image: =iconMttos
                     OnSelect: |-
-                        =If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Administrador",
-                        Navigate(MantenimientosAdmin, ScreenTransition.Cover), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, rol_usuario).Value = "Técnico", Navigate(MantenimientosTecnico, ScreenTransition.Cover), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error, 2500)))
+                        =/*If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Administrador";
+                        Navigate(MantenimientosAdmin; ScreenTransition.Cover); If(LookUp(Usuario_htria_ppal; user_usuario = txtUsuario.Text; rol_usuario).Value = "Técnico"; Navigate(MantenimientosTecnico; ScreenTransition.Cover); Notify("¡No tiene permisos para entrar a esta sección!"; NotificationType.Error; 2500)))*/
+                        
+                        // Genera el código para verificar el rol del usuario ingresado en `txtUsuario`. Si el rol es "Administrador", navega a la pantalla de `MantenimientosAdmin`. Si el rol es "Técnico", navega a la pantalla de `MantenimientosTecnico`. Si el rol no coincide con ninguno de estos, muestra una notificación de error.
+                        If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Administrador", Navigate(MantenimientosAdmin), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text).rol_usuario.Value = "Técnico", Navigate(MantenimientosTecnico), Notify("¡No tiene permisos para entrar a esta sección!", NotificationType.Error)))
                     Width: =105
                     X: =47
                     Y: =16
@@ -260,9 +266,7 @@ Inicio As screen:
                     Color: =RGBA(0, 0, 0, 1)
                     Height: =55
                     Icon: =Icon.Leave
-                    OnSelect: |-
-                        =//Reset(txtUsuario);; Reset(txtClave);; Navigate(Login; ScreenTransition.CoverRight)
-                        Exit()
+                    OnSelect: =Exit()
                     PaddingRight: =10
                     Width: =55
                     ZIndex: =2

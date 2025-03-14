@@ -210,27 +210,31 @@ Login As screen:
                 Font: =Font.Lato
                 Height: =46
                 HoverFill: =ColorFade(RGBA(102, 102, 102, 1), -20%)
-                OnSelect: |-
-                    =If(
+                OnSelect: |+
+                    =/*If(
                         txtUsuario.Text = LookUp(
-                            Usuario_htria_ppal,
-                            user_usuario = txtUsuario.Text,
+                            Usuario_htria_ppal;
+                            user_usuario = txtUsuario.Text;
                             user_usuario
                         ) && txtClave.Text = LookUp(
-                            Usuario_htria_ppal,
-                            clave_usuario = txtClave.Text,
+                            Usuario_htria_ppal;
+                            clave_usuario = txtClave.Text;
                             clave_usuario
-                        ),
+                        );
                         Navigate(
-                            Inicio,
+                            Inicio;
                             ScreenTransition.Cover
-                        ),
+                        );
                         Notify(
-                            "¡Credenciales incorrectas. Por favor, verifique su usuario o su contraseña",
-                            NotificationType.Error,
+                            "¡Credenciales incorrectas. Por favor, verifique su usuario o su contraseña";
+                            NotificationType.Error;
                             2500
                         )
-                    )
+                    )*/
+                    
+                    //Genera código para iniciar sesión al presionar al botón tnIniciarSesion
+                    If(IsBlank(txtUsuario.Text) || IsBlank(txtClave.Text), Notify("Por favor, complete todos los campos.", NotificationType.Error), If(LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text && clave_usuario = txtClave.Text, ID) <> Blank(), Navigate(Inicio, ScreenTransition.Fade), Notify("Usuario o clave incorrectos.", NotificationType.Error)))
+                    
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4

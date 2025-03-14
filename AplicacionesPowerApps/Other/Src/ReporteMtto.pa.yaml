@@ -1,0 +1,290 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ReporteMtto:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Container12_10:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - header_25:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - iconUbicacionHtasCertCMSA_9:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =30
+                        Icon: =Icon.Waypoint
+                        PaddingLeft: =10
+                        Visible: =ReporteMtto.Size <> 1
+                        Width: =30
+                        X: =83
+                        Y: =1
+                  - txUbicacionHtasCertCMSA_13:
+                      Control: Label@2.5.1
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =9
+                        Text: =If(lsUbicacionPrestamos.SelectedText.Value <> "Mina","Htría Ppal - Planta", "Htría Ppal - Mina")
+                        Visible: =ReporteMtto.Size <> 1
+                        Width: =160
+                        X: =30
+                        Y: =69
+                  - tituloPrestamosCrearEditarHta_7:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =12
+                        Text: ="REPORTE - MANTENIMIENTO REALIZADO"
+                        Width: =666
+                        X: =350
+                        Y: =35
+                  - iconUsuarioPrestamosCrearEditarHta_7:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(77, 77, 77, 1)
+                        Height: =30
+                        Icon: =Icon.Person
+                        Tooltip: =LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Width: =80
+                        X: =777
+                        Y: =36
+                  - txtUsuarioPrestamosCrearEditarHta_7:
+                      Control: Label@2.5.1
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Font: =Font.Lato
+                        Height: =32
+                        Italic: =true
+                        Size: =10
+                        Text: |-
+                          ="Bienvenido(a): " & LookUp(Usuario_htria_ppal, user_usuario = txtUsuario.Text, nombre_usuario)
+                        Visible: =ReporteMtto.Size <> 1
+                        Width: =169
+                        X: =807
+                        Y: =36
+            - body_25:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - ContenedorHtml:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - HtmlText1_1:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                              FillPortions: =1
+                              Font: =Font.Lato
+                              HtmlText: |-
+                                ="
+                                <div style='overflow-y: auto;'>
+                                    <h3 style='text-align: center;'>"& Upper(galEjecMttoHtasTecnico.Selected.tipo_mtto.Value) &": "& Upper(galEjecMttoHtasTecnico.Selected.codigo_hta) &" - "& Upper(galEjecMttoHtasTecnico.Selected.descripcion_hta) &" " & Upper(galEjecMttoHtasTecnico.Selected.capacidad_hta) &"</h3>
+                                    <hr style='height: 5px; background-color: yellow;'>
+                                    <br>
+                                    <ul>
+                                        <li><strong><i>Fecha de mantenimiento:</strong></i> "& Text(galEjecMttoHtasTecnico.Selected.fecha_mtto, "dd/mm/yyyy") &"</li><br>
+                                        <li><strong><i>Tipo de mantenimiento:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.tipo_mtto.Value) &"</li><br>
+                                        <li><strong><i>Código de la herramienta:</strong></i> "& Upper(galEjecMttoHtasTecnico.Selected.codigo_hta) &"</li><br>
+                                        <li><strong><i>Tipo de herramienta:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.tipo_hta.Value) &"</li><br>
+                                        <li><strong><i>Descripción de la herramienta:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.descripcion_hta) &" - " & Proper(galEjecMttoHtasTecnico.Selected.capacidad_hta) & "</li><br>
+                                        <li><strong><i>Número de precinto:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.no_precinto_hta) &"</li><br>
+                                        <li><strong><i>Número de trabajadores:</strong></i> "& Text(galEjecMttoHtasTecnico.Selected.no_trabajadores) &"</li><br>
+                                        <li><strong><i>Hora de inicio:</strong></i> "& Text(galEjecMttoHtasTecnico.Selected.hora_inicio) &"</li><br>
+                                        <li><strong><i>Hora de finalización:</strong></i> "& Text(galEjecMttoHtasTecnico.Selected.hora_fin) &"</li><br>
+                                        <li><strong><i>Tipo de programación:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.tipo_programacion) &"</li><br>
+                                        <li><strong><i>Técnico encargado:</strong></i> "& Proper(galEjecMttoHtasTecnico.Selected.tecnico_mtto.Value) &"</li><br>
+                                        <li><strong><i>Descripción del mantenimiento:</strong></i> "& Text(galEjecMttoHtasTecnico.Selected.descripcion_mtto) &"</li><br>
+                                    </ul>
+                                </div>
+                                "
+                              Size: =12
+                  - Container30_11:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =90
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        PaddingTop: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Container35_9:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutMinHeight: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =150
+                            Children:
+                              - lblActualizarCertCMSA_5:
+                                  Control: Label@2.5.1
+                                  Group: Group16_7
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.Lato
+                                    Height: =20
+                                    Italic: =true
+                                    Size: =10
+                                    Text: ="Generar PDF"
+                                    Width: =100
+                                    X: =25
+                                    Y: =60
+                              - iconActualizarCertCMSA_5:
+                                  Control: Classic/Icon@2.5.0
+                                  Group: Group16_7
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =50
+                                    Icon: =Icon.DocumentPDF
+                                    OnSelect: |-
+                                      =Set(archivoPdfMtto, PDF(ContenedorHtml, {ExpandContainers: true})); Navigate(PdfReporteMtto, ScreenTransition.Cover)
+                                    Width: =50
+                                    X: =50
+                                    Y: =10
+            - footer_25:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - lineaPie_38:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(253, 235, 1, 1)
+                        Fill: =RGBA(253, 235, 1, 1)
+                        Height: =3
+                        Width: =Parent.Width - 50
+                        X: =33
+                        Y: =671
+                  - Container23_10:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =75
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - txtPiePaginaPrestamosCrearEditarHta_7:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              FillPortions: =1
+                              Font: =Font.Lato
+                              Height: =75
+                              Italic: =true
+                              PaddingTop: =10
+                              Size: =12
+                              Text: '="Herramentería CMSA - " & Text(Today(), "yyyy") '
+                              Width: =238
+                              X: =531
+                              Y: =34
+                        - iconAtrasPrestamosCrearEditarHta_7:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(0, 0, 0, 1)
+                              Height: =55
+                              Icon: =Icon.BackArrow
+                              OnSelect: =Back()
+                              PaddingRight: =10
+                              Width: =55
+                              X: =1242
+                              Y: =580
