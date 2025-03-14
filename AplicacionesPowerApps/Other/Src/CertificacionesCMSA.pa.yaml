@@ -200,20 +200,24 @@ Screens:
                         BorderThickness: =1
                         Height: =388
                         Items: |-
-                          =SortByColumns( If(
-                              IsBlank(txtBuscarHtaCertCMSA.Text),
-                              Hta_Cmsa,
-                              Filter(
+                          =SortByColumns(
+                              If(
+                                  IsBlank(txtBuscarHtaCertCMSA.Text),
                                   Hta_Cmsa,
-                                  StartsWith(
-                                      descripcion_hta,
-                                      txtBuscarHtaCertCMSA.Text
-                                  ) Or StartsWith(
-                                      codigo_hta,
-                                      txtBuscarHtaCertCMSA.Text
-                                  ) Or no_precinto_hta = txtBuscarHtaCertCMSA.Text
-                              ) 
-                          ), "fecha_inspeccion_hta",SortOrder.Descending)
+                                  Filter(
+                                      Hta_Cmsa,
+                                      StartsWith(
+                                          descripcion_hta,
+                                          txtBuscarHtaCertCMSA.Text
+                                      ) Or StartsWith(
+                                          codigo_hta,
+                                          txtBuscarHtaCertCMSA.Text
+                                      ) Or no_precinto_hta = txtBuscarHtaCertCMSA.Text
+                                  )
+                              ),
+                              "fecha_inspeccion_hta",
+                              SortOrder.Descending
+                          )
                         TemplatePadding: =15
                         TemplateSize: =230
                         Width: =1361
@@ -718,9 +722,9 @@ Screens:
                                     Color: =RGBA(0, 0, 0, 1)
                                     Height: =50
                                     Icon: =Icon.Add
-                                    OnSelect: |-
+                                    OnSelect: |+
                                       =NewForm(formCrearHtaCMSA_1); Set(avisoCrearHta, true)
-                                      //NewForm(formCrearHtaCMSA);; Navigate(CertificacionesCrearHtaCMSA; ScreenTransition.Cover)
+
                                     Width: =50
                                     X: =25
                                     Y: =10
