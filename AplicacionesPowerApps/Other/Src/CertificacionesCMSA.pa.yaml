@@ -503,12 +503,13 @@ Screens:
                               BorderColor: =RGBA(0, 0, 0, 1)
                               Font: =Font.Lato
                               Height: =20
+                              LineHeight: =1.5
                               OnSelect: =Select(Parent)
                               PaddingBottom: =0
                               PaddingLeft: =0
                               PaddingRight: =0
                               PaddingTop: =0
-                              Size: =10
+                              Size: =8
                               Text: =ThisItem.descripcion_hta
                               VerticalAlign: =VerticalAlign.Top
                               Width: =194
